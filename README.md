@@ -1,2 +1,2 @@
 # ParserJupyter
-Use: parse.py --path some_path
+Use: parse.py --path notebooks_path
