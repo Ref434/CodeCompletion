@@ -1,2 +1,2 @@
 # ParserJupyter
-Use: parer.py --path some_path
+Use: parse.py --path some_path
