@@ -34,17 +34,21 @@ def write_as_csv(data):
 
 if __name__ == '__main__':
     if len(sys.argv) < 3:
-        print("Ошибка. Слишком мало параметров.")
+        print("Error. Too few parameters.")
         sys.exit(1)
 
     if len(sys.argv) > 3:
-        print("Ошибка. Слишком много параметров.")
+        print("Error. Too many parameters.")
         sys.exit(1)
     param_name = sys.argv[1]
     param_value = sys.argv[2]
 
     if param_name != "--path":
-        print("Ошибка. Неизвестный параметр '{}'".format(param_name))
+        print(f"Error. Unknown parameter '{param_name}'.")
+        sys.exit(1)
+
+    if not os.path.exists(param_value):
+        print(f"Error. The system cannot find the path '{param_value}'.")
         sys.exit(1)
 
     for filename in os.listdir(param_value):
@@ -57,3 +61,5 @@ if __name__ == '__main__':
 
                 for name, code in get_cells_content(notebook['cells']):
                     save_as_txt_file(f"{param_value}\{filename}_parsed\{name}", code)
+
+    print("Success.")
