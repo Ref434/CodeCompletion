@@ -1,0 +1,5 @@
+x = np.eye(4)
+out1 = np.linalg.matrix_rank(x)
+out2 = np.linalg.svd(x)[1].size
+assert out1 == out2
+print out1

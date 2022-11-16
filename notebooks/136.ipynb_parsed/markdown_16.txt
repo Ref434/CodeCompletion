@@ -1,0 +1,1 @@
+Q6. Compute the qr factorization of x and verify it.

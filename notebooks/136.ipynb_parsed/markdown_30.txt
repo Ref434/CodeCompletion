@@ -1,0 +1,1 @@
+Q12. Calculate the rank of x.

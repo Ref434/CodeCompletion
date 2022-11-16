@@ -6,7 +6,7 @@ import sys
 
 def get_notebook(notebook_path):
     with open(notebook_path, 'r', encoding='utf-8') as notebook:
-        return json.load(notebook)
+        return json.load(notebook, strict=False)
 
 
 def get_source_from_code_cell(cell):
@@ -51,6 +51,8 @@ if __name__ == '__main__':
         print(f"Error. The system cannot find the path '{param_value}'.")
         sys.exit(1)
 
+    print("Processing...")
+
     for filename in os.listdir(param_value):
         if filename.endswith(".ipynb"):
             imports = []
@@ -60,6 +62,7 @@ if __name__ == '__main__':
                 os.mkdir(f"{param_value}\{filename}_parsed")
 
                 for name, code in get_cells_content(notebook['cells']):
+
                     save_as_txt_file(f"{param_value}\{filename}_parsed\{name}", code)
 
     print("Success.")

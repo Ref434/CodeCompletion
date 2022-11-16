@@ -1,0 +1,6 @@
+x = np.arange(1, 5).reshape((2, 2))
+sign, logdet = np.linalg.slogdet(x)
+det = np.linalg.det(x)
+assert sign == np.sign(det)
+assert logdet == np.log(np.abs(det))
+print sign, logdet

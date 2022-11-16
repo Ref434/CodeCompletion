@@ -1,0 +1,4 @@
+x = np.array([[4, 12, -16], [12, 37, -43], [-16, -43, 98]], dtype=np.int32)
+L = np.linalg.cholesky(x)
+print L
+assert np.array_equal(np.dot(L, L.T.conjugate()), x)

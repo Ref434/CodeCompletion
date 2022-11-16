@@ -1,0 +1,7 @@
+x = [1,2]
+y = [[4, 1], [2, 2]]
+print np.dot(x, y)
+print np.dot(y, x)
+print np.matmul(x, y)
+print np.inner(x, y)
+print np.inner(y, x)
