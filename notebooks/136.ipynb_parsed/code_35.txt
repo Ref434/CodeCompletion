@@ -1,5 +1,0 @@
-x = np.eye(4)
-out1 = np.trace(x)
-out2 = x.diagonal().sum()
-assert out1 == out2
-print out1

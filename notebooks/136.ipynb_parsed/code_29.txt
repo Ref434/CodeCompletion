@@ -1,5 +1,0 @@
-x = np.arange(1, 5).reshape((2, 2))
-out1 = np.linalg.det(x)
-out2 = x[0, 0] * x[1, 1] - x[0, 1] * x[1, 0]
-assert np.allclose(out1, out2)
-print out1

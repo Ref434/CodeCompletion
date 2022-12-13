@@ -1,1 +1,0 @@
-Q7. Factor x by Singular Value Decomposition and verify it.

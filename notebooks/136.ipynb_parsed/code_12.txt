@@ -1,6 +1,0 @@
-x = np.array(['a', 'b'], dtype=object)
-y = np.array([1, 2])
-print np.inner(x, y)
-print np.inner(y, x)
-print np.outer(x, y)
-print np.outer(y, x)

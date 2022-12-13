@@ -1,7 +1,0 @@
-x = np.diag((1, 2, 3))
-eigenvals = np.linalg.eig(x)[0]
-eigenvals_ = np.linalg.eigvals(x)
-assert np.array_equal(eigenvals, eigenvals_)
-print "eigenvalues are\n", eigenvals
-eigenvecs = np.linalg.eig(x)[1]
-print "eigenvectors are\n", eigenvecs
