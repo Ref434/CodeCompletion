@@ -1,1 +1,0 @@
-Q15. Compute the inverse of x.

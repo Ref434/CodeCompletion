@@ -1,1 +1,0 @@
-Q14. Return the sum along the diagonal of x.

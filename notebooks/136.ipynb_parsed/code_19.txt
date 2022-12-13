@@ -1,4 +1,0 @@
-x = np.array([[1, 0, 0, 0, 2], [0, 0, 3, 0, 0], [0, 0, 0, 0, 0], [0, 2, 0, 0, 0]], dtype=np.float32)
-U, s, V = np.linalg.svd(x, full_matrices=False)
-print "U=\n", U, "\ns=\n", s, "\nV=\n", v
-assert np.allclose(np.dot(U, np.dot(np.diag(s), V)), x)

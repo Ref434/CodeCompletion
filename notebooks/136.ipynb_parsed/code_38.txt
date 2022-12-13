@@ -1,4 +1,0 @@
-x = np.array([[1., 2.], [3., 4.]])
-out1 = np.linalg.inv(x)
-assert np.allclose(np.dot(x, out1), np.eye(2))
-print out1

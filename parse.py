@@ -1,6 +1,5 @@
 import json
 import os
-import csv
 import sys
 
 
@@ -23,13 +22,6 @@ def get_cells_content(notebook_cells):
         (f"{current_cell['cell_type']}_{i}.txt", get_source_from_code_cell(current_cell))
         for i, current_cell in enumerate(notebook_cells, 1)
     )
-
-
-def write_as_csv(data):
-    with open('imports.csv', 'w') as f:
-        writer = csv.writer(f)
-        for row in data:
-            writer.writerow(row)
 
 
 if __name__ == '__main__':

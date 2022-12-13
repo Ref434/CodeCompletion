@@ -3,6 +3,7 @@ import os
 import csv
 import sys
 
+
 def line_processing(line):
     imports = []
     if line[0] == "import":
@@ -15,10 +16,6 @@ def line_processing(line):
             imports.append(f"{tmp}.{line[index]}")
 
     return imports
-
-
-
-
 
 
 def find_imports(code):
