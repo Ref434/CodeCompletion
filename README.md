@@ -1,4 +1,4 @@
-TODO: Add new libraries(now only 'sklearn')
+TODO: Add new libraries (now only 'sklearn')
 
 TODO: Add 'as' in imports processing (import numpy as np)
 
