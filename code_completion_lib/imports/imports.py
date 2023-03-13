@@ -11,8 +11,6 @@ class Imports:
     def __init__(self, path: str):
         self.path = path
 
-    # TODO: Add 'as' in imports processing (import numpy as np)
-    # TODO: Add '*' in imports processing (from math import *)
     def _line_processing(self, line: list, format: str = 'default'):
         imports: list = []
 
@@ -36,14 +34,20 @@ class Imports:
                     imports.append(f"{tmp}.{line[index]}")\
 
         if format == 'usage':
+            if len(line) > 3:
+                if line[2] == 'as':
+                    return [[line[1], line[2], line[3]]]
+
             if line[0] == "import":
                 for index in range(1, len(line)):
                     imports.append([line[index]])
 
-            if line[0] == "from":
+            elif line[0] == "from":
                 tmp = line[1]
                 for index in range(3, len(line)):
                     imports.append([tmp, line[index]])
+
+
 
         return imports
 
@@ -55,7 +59,7 @@ class Imports:
         if format == 'default':
             reg_exp = re.findall(r"\bimport\s+\S+|\bfrom\s+\S+\s+import\s+[^,\s]+(?:\s*,\s*[^,\s]+)*", code, flags=re.ASCII)
         if format == 'usage':
-            reg_exp = re.findall(r"\bimport\s+\S+|\bfrom\s+\S+\s+import\s+[^,\s]+(?:\s*,\s*[^,\s]+)*", code, flags=re.ASCII)
+            reg_exp = re.findall(r"\bimport\s+\S+\s+as\s+\S+|\bimport\s+\S+|\bfrom\s+\S+\s+import\s+[^,\s]+(?:\s*,\s*[^,\s]+)*", code, flags=re.ASCII)
 
         reg_exp = [match.rstrip().replace(",", " ").replace(";", " ").split(" ") for match in reg_exp]
 

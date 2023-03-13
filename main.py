@@ -16,14 +16,14 @@ if __name__ == '__main__':
     #import_class = Imports(r'C:\data\data_parsed')
     #import_class.process()
 
-    #completion = CodeCompletion()
+    completion = CodeCompletion()
     #completion.import_clusterization()
 
 
-    #methods = Methods()
-    #methods.find_methods(r'C:\data\data_parsed', r"code_completion_lib\methods\libraries\sklearn.json", 'sklearn.')
+    methods = Methods()
+    methods.find_methods(r'D:\sasha\code_completion\data_parsed', r"code_completion_lib\methods\libraries\sklearn.json", 'sklearn.')
 
-    #completion.relations_variable_with_method()
-    #completion.relations_cluster_with_variable()
+    completion.relations_variable_with_method()
+    completion.relations_cluster_with_variable()
 
     print('END.')

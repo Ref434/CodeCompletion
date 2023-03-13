@@ -36,18 +36,39 @@ class Methods:
 
     def _find_imported_methods(self, methods, imports):
         result = []
-        for method in methods:
-            for some_import in imports:
-                if len(some_import) == 1:
-                    if method == some_import[0]:
-                        result.append([method, some_import[0]])
+        for some_import in imports:
+
+            for method in methods:
+                similar = ''
+                split_method = method.split('.')
+                split_import = some_import[0].split('.')
+                complete_match = True
                 if len(some_import) == 2:
-                    if method == f"{some_import[0]}.{some_import[1]}":
-                        result.append([method, some_import[1]])
+                    split_import.extend(some_import[1].split('.'))
+
+                if len(split_import) == len(split_method):
+                    if len(some_import) == 2:
+                        if method == f"{some_import[0]}.{some_import[1]}":
+                            result.append([method, some_import[1]])
+
+                elif len(split_import) < len(split_method):
+                    for index in range(len(split_import)):
+                        if split_method[index] == split_import[index]:
+                            similar += split_method[index] + '.'
+                        else:
+                            complete_match = False
+
+                if len(some_import) == 2:
+                    if not complete_match and some_import[1] == '*':
+                        result.append([method, method.replace(similar, '')])
+                elif len(some_import) == 3:
+                    if some_import[1] == 'as':
+                        result.append([method, method.replace(similar, f'{some_import[2]}.')])
+                elif complete_match and similar != '':
+                    result.append([method, f"{similar.split('.')[-2]}.{method.replace(similar, '')}"])
 
         return result
 
-    # TODO: Not working with not 'clear' imports (from sklearn import linear_model ... my_model = linear_model.LogisticRegression). Only (from sklearn.linear_model import LogisticRegression)
     def find_methods(self, data_path: str, methods_json: str, lib: str):
         methods_result = []
 
@@ -66,8 +87,11 @@ class Methods:
             imports = import_class.find_imports(code, format='usage')
             imports_only_lib = import_class.find_imports(code, format='only_lib')
             imported_methods = self._find_imported_methods(methods, imports)
+            imported_methods_without_repetitions = []
+            [imported_methods_without_repetitions.append(element) for element in imported_methods if
+             element not in imported_methods_without_repetitions]
 
-            for method in imported_methods:
+            for method in imported_methods_without_repetitions:
                 reg_exp = re.findall(rf".+=\s*{method[1]}\(", code, flags=re.ASCII)
                 reg_exp = [match.rstrip().replace(" ", "")[:-1].split("=", 1) for match in reg_exp]
 
