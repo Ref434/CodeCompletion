@@ -12,6 +12,12 @@ from sklearn import metrics
 from enum import Enum
 import pickle
 
+from operator import itemgetter
+
+from thefuzz import fuzz as f
+
+from code_completion_lib.necessary_functions import read_json
+
 
 class Cluster(Enum):
     STRUCTURED_DATA = 0                                    # 10200.txt: 0.7134112111564094: ['pandas']
@@ -38,6 +44,36 @@ class CodeCompletion:
 
     def __init__(self):
         self.df = pd.read_csv(r'code_completion_lib\imports\preprocessing_imports.csv')
+
+    def get_completion(self, variable_name: str, imports: list, number: int = 5):
+
+        cluster_name = self.cluster_predict(imports)
+
+        result: list = []
+
+        var_method = read_json(r'code_completion_lib\methods\relations_variable_with_method.json')
+
+        best_score = 0
+        best_match = ''
+        for variable in var_method.keys():
+            score = f.WRatio(variable, variable_name)
+            if score > best_score:
+                best_score = score
+                best_match = variable
+
+        if cluster_name in var_method[best_match].keys():
+            methods = var_method[best_match][cluster_name]
+        else:
+            cluster_name = list(var_method[best_match].keys())[0]
+            methods = var_method[best_match][cluster_name]
+
+        sorted_methods = dict(sorted(methods.items(), key=itemgetter(1)))
+        for method, score in sorted_methods.items():
+            result.append(method)
+
+        result.reverse()
+
+        return result[:number]
 
     def relations_variable_with_method(self):
         df = pd.read_csv(r'code_completion_lib/methods/methods.csv')

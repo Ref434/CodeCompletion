@@ -2,9 +2,9 @@ import importlib
 import sys
 import json
 from sklearn import *
-import numpy
-from inspect import getmembers, isfunction
-
+# from pandas import *
+import requests
+#from os import *
 
 def get_methods(object, name_of_class, spacing=20):
     methodList = []
@@ -43,18 +43,18 @@ def getModule(name):
 
 
 def writeData(name_of_file, data):
+    print(name_of_file)
     with open(f'{name_of_file}.json', 'w') as outfile:
+        print(1)
         json.dump(data, outfile, indent=4)
 
 if __name__ == "__main__":
-    print(dir(numpy))
-    # name = 'numpy'
-    # data = {}
-    # if isModuleExist(name):
-    #     module = getModule(name)
-    #     all_module = module.__all__
-    #     for module_class in all_module:
-    #         data[module_class] = get_methods(eval(str(module_class)), str(module_class) + '.')
-    #
-    # writeData(name, data)
+    name = 'requests'
+    data = {}
+    if isModuleExist(name):
+        module = getModule(name)
+        all_module = module.__all__
+        for module_class in all_module:
+            data[module_class] = get_methods(eval(str(module_class)), str(module_class) + '.')
 
+    writeData(name, data)

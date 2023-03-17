@@ -5,6 +5,10 @@ from code_completion_lib.methods.find_methods_in_code import Methods
 import sys
 import os
 
+
+import numpy
+import sklearn
+
 if __name__ == '__main__':
 
     print('Processing...')
@@ -20,10 +24,14 @@ if __name__ == '__main__':
     #completion.import_clusterization()
 
 
-    methods = Methods()
-    methods.find_methods(r'D:\sasha\code_completion\data_parsed', r"code_completion_lib\methods\libraries\sklearn.json", 'sklearn.')
 
-    completion.relations_variable_with_method()
-    completion.relations_cluster_with_variable()
+    #methods = Methods()
+
+    #methods.find_methods(r'C:\data\data_parsed')
+
+    #completion.relations_variable_with_method()
+    #completion.relations_cluster_with_variable()
+
+    print(completion.get_completion('p', ['numpy', 'sklearn', 'matplotlib']))
 
     print('END.')

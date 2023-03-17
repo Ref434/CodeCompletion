@@ -8,17 +8,18 @@ from code_completion_lib.necessary_functions import get_code, write_as_csv, read
 
 
 class Methods:
+    libs = []
 
-    def _get_methods(self, object):
-        methodList = []
-        for method_name in dir(object):
-            try:
-                if callable(getattr(object, method_name)):
-                    methodList.append(str(method_name))
-            except Exception:
-                methodList.append(str(method_name))
-
-        return methodList
+    def __init__(self):
+        self.libs.append([r"code_completion_lib\methods\libraries\numpy.json", 'numpy'])
+        self.libs.append([r"code_completion_lib\methods\libraries\sklearn.json", 'sklearn'])
+        self.libs.append([r"code_completion_lib\methods\libraries\collections.json", 'collections'])
+        self.libs.append([r"code_completion_lib\methods\libraries\re.json", 're'])
+        self.libs.append([r"code_completion_lib\methods\libraries\json.json", 'json'])
+        self.libs.append([r"code_completion_lib\methods\libraries\datetime.json", 'datetime'])
+        self.libs.append([r"code_completion_lib\methods\libraries\scipy.json", 'scipy'])
+        self.libs.append([r"code_completion_lib\methods\libraries\warnings.json", 'warnings'])
+        self.libs.append([r"code_completion_lib\methods\libraries\random.json", 'random'])
 
     def _find_full_method_name(self, methods_json, arr=[], prefix=""):
 
@@ -27,8 +28,10 @@ class Methods:
                 arr.append(f"{prefix}{key}")
 
             if type(val) == dict:
+                arr.append(f"{prefix}{key}")
                 prefix_old = prefix
                 prefix += f"{key}."
+
                 self._find_full_method_name(val, arr, prefix)
                 prefix = prefix_old
 
@@ -42,6 +45,8 @@ class Methods:
                 similar = ''
                 split_method = method.split('.')
                 split_import = some_import[0].split('.')
+                if split_method[0] != split_import[0]:
+                    continue
                 complete_match = True
                 if len(some_import) == 2:
                     split_import.extend(some_import[1].split('.'))
@@ -69,24 +74,31 @@ class Methods:
 
         return result
 
-    def find_methods(self, data_path: str, methods_json: str, lib: str):
+    def find_methods(self, data_path: str):
+
         methods_result = []
 
-        methods = self._find_full_method_name(read_json(methods_json), prefix=lib)
+        for lib in self.libs:
+            methods = self._find_full_method_name(read_json(lib[0]), prefix=lib[1] + '.')
         methods_result.append(["varible_name", "method", "cluster"])
 
         completion = CodeCompletion()
         import_class = Imports(data_path)
 
+        i=0
+
         for filename in os.listdir(data_path):
+            i+=1
 
             full_path = os.path.join(data_path, filename)
 
             code = get_code(full_path)
 
             imports = import_class.find_imports(code, format='usage')
+
             imports_only_lib = import_class.find_imports(code, format='only_lib')
             imported_methods = self._find_imported_methods(methods, imports)
+
             imported_methods_without_repetitions = []
             [imported_methods_without_repetitions.append(element) for element in imported_methods if
              element not in imported_methods_without_repetitions]
@@ -101,6 +113,8 @@ class Methods:
                         exp.append(completion.cluster_predict(imports_only_lib))
 
                     methods_result.extend(reg_exp)
+            if i>1000:
+                break
         write_as_csv(methods_result, r'code_completion_lib\methods\methods.csv', 'w')
 
         print("Find methods ended")
