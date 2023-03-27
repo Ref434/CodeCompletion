@@ -20,7 +20,7 @@ def read_json(file: str):
 
 def find_imported_methods(methods, imports):
     result = {}
-    # result = []
+
     for some_import in imports:
 
         for method in methods:
@@ -36,16 +36,13 @@ def find_imported_methods(methods, imports):
             if len(split_import) == len(split_method) and split_import[-1] != '*':
                 if len(some_import) == 1:
                     if method == some_import[0]:
-                        # result.append([method, method])
                         result[(method, method)] = 1
                 elif len(some_import) == 2:
                     if method == f"{some_import[0]}.{some_import[1]}":
                         result[(method, some_import[1])] = 1
-                        # result.append([method, some_import[1]])
                 elif len(some_import) == 3:
                     if method == some_import[0]:
                         result[(method, some_import[2])] = 1
-                        # result.append([method, some_import[2]])
 
             if len(split_import) < len(split_method) or (
                     len(split_import) == len(split_method) and split_import[-1] == '*'):
@@ -57,22 +54,16 @@ def find_imported_methods(methods, imports):
                             complete_match = False
 
             if similar != "":
-                # print(method)
-                # print(similar)
                 if len(some_import) == 1 and complete_match:
-                    # result.append([method, method])
                     result[(method, method)] = 1
 
                 elif len(some_import) == 2:
                     if some_import[1] == '*' and complete_match:
                         result[(method, method.replace(similar, ''))] = 1
-                        # result.append([method, method.replace(similar, '')])
                     elif complete_match:
                         result[(method, f"{similar.split('.')[-2]}.{method.replace(similar, '')}")] = 1
-                        # result.append([method, f"{similar.split('.')[-2]}.{method.replace(similar, '')}"])
 
                 elif len(some_import) == 3 and some_import[1] == 'as' and complete_match:
                     result[(method, method.replace(similar, f'{some_import[2]}.'))] = 1
-                    # result.append([method, method.replace(similar, f'{some_import[2]}.')])
 
     return result
