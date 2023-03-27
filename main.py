@@ -2,36 +2,30 @@ from code_completion_lib.code_completion import CodeCompletion
 from code_completion_lib.imports.imports import Imports
 from code_completion_lib.parse_notebooks import Parser
 from code_completion_lib.methods.find_methods_in_code import Methods
-import sys
-import os
 
-
-import numpy
-import sklearn
+from code_completion_lib.logger.logger import Logger
 
 if __name__ == '__main__':
+    logger = Logger(__name__)
 
-    print('Processing...')
+    try:
 
-    #parcer = Parser(r'C:\data\notebooks', r'C:\data\data_parsed')
-    #parcer.parse()
-    #parcer.check_language()
+        parcer = Parser(r'C:\test\notebooks', r'C:\test\data_parsed')
+        parcer.parse()
+        parcer.check_language()
 
-    #import_class = Imports(r'C:\data\data_parsed')
-    #import_class.process()
+        import_class = Imports(r'C:\test\data_parsed')
+        import_class.process()
 
-    completion = CodeCompletion()
-    #completion.import_clusterization()
+        completion = CodeCompletion()
+        completion.import_clusterization()
 
+        methods = Methods()
 
+        methods.find_methods(r'C:\test\data_parsed')
 
-    #methods = Methods()
+        completion.relations_variable_with_method()
+        completion.relations_cluster_with_variable()
 
-    #methods.find_methods(r'C:\data\data_parsed')
-
-    #completion.relations_variable_with_method()
-    #completion.relations_cluster_with_variable()
-
-    print(completion.get_completion('p', ['numpy', 'sklearn', 'matplotlib']))
-
-    print('END.')
+    except Exception:
+        logger.error("Exception")

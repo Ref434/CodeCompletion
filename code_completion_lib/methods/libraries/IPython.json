@@ -1,0 +1,17 @@
+{
+    "Application": {},
+    "InteractiveShell": {},
+    "embed": {},
+    "embed_kernel": {},
+    "extract_module_locals": {},
+    "get_ipython": {},
+    "release": {},
+    "start_ipython": {},
+    "start_kernel": {},
+    "sys": {},
+    "sys_info": {},
+    "version_info": {
+        "count": "Return number of occurrences of value.",
+        "index": "Return first index of value."
+    }
+}

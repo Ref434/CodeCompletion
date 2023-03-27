@@ -3,12 +3,14 @@ import os
 from code_completion_lib.necessary_functions import write_as_csv
 import pandas as pd
 
+from code_completion_lib.logger.logger import Logger
+
 
 class Imports:
-
     path: str = None
 
     def __init__(self, path: str):
+        self.logger = Logger(__name__)
         self.path = path
 
     def _line_processing(self, line: list, format: str = 'default'):
@@ -31,8 +33,7 @@ class Imports:
             if line[0] == "from":
                 tmp = line[1]
                 for index in range(3, len(line)):
-                    imports.append(f"{tmp}.{line[index]}")\
-
+                    imports.append(f"{tmp}.{line[index]}")
         if format == 'usage':
             if len(line) > 3:
                 if line[2] == 'as':
@@ -47,8 +48,6 @@ class Imports:
                 for index in range(3, len(line)):
                     imports.append([tmp, line[index]])
 
-
-
         return imports
 
     def find_imports(self, code: str, format: str = 'default'):
@@ -57,9 +56,12 @@ class Imports:
         if format == 'only_lib':
             reg_exp = re.findall(r"^\bimport\s\S+|^\bfrom\s\S+\simport", code, flags=re.ASCII and re.MULTILINE)
         if format == 'default':
-            reg_exp = re.findall(r"\bimport\s+\S+|\bfrom\s+\S+\s+import\s+[^,\s]+(?:\s*,\s*[^,\s]+)*", code, flags=re.ASCII)
+            reg_exp = re.findall(r"\bimport\s+\S+|\bfrom\s+\S+\s+import\s+[^,\s]+(?:\s*,\s*[^,\s]+)*", code,
+                                 flags=re.ASCII)
         if format == 'usage':
-            reg_exp = re.findall(r"\bimport\s+\S+\s+as\s+\S+|\bimport\s+\S+|\bfrom\s+\S+\s+import\s+[^,\s]+(?:\s*,\s*[^,\s]+)*", code, flags=re.ASCII)
+            reg_exp = re.findall(
+                r"\bimport\s+\S+\s+as\s+\S+|\bimport\s+\S+|\bfrom\s+\S+\s+import\s+[^,\s]+(?:\s*,\s*[^,\s]+)*", code,
+                flags=re.ASCII)
 
         reg_exp = [match.rstrip().replace(",", " ").replace(";", " ").split(" ") for match in reg_exp]
 
@@ -70,7 +72,6 @@ class Imports:
             imports.extend(self._line_processing(match, format))
 
         return imports
-
 
     def process(self):
 
@@ -102,7 +103,8 @@ class Imports:
 
         imports_without_repetitions = []
         for notebook in all_imports:
-            [imports_without_repetitions.append(element) for element in notebook if element not in imports_without_repetitions
+            [imports_without_repetitions.append(element) for element in notebook if
+             element not in imports_without_repetitions
              and isinstance(element, str)]
 
         imports_without_repetitions.insert(0, 'filename')
@@ -125,10 +127,12 @@ class Imports:
 
         write_as_csv(csv_imports, r'code_completion_lib\imports\imports.csv', 'w')
 
+        # Removing infrequent imports (less than 1%) to exclude custom imports
         df = pd.read_csv(r'code_completion_lib\imports\imports.csv')
+        num = int(df.count()[0] * 0.01)
         tmp = df.iloc[:, 1:]
-        df = df.drop(columns=tmp.columns[tmp.sum() <= 40])
+        df = df.drop(columns=tmp.columns[tmp.sum() <= num])
         df = df.loc[~(df.iloc[:, 1:] == 0).all(axis=1)]
         df.to_csv(r'code_completion_lib\imports\preprocessing_imports.csv')
 
-        print("Find imports ended.")
+        self.logger.info("Find imports ended.")

@@ -1,0 +1,19 @@
+21 notebooks
+Silhouette Coefficient: 0.108
+Davies-Bouldin Index: 0.737
+labels:
+[2, 3, 4, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1]
+found 13 clusters
+10.txt           1.118033988749895     STRUCTURED_DATA                                ['tensorflow', 'pickle', 'numpy', 'os']
+51.txt           0.9428090415820635    SCIENTIFIC_COMPUTING                           ['numpy']
+12.txt           0.5                   REQUESTS                                       ['numpy', 'pandas', 'matplotlib', 'sklearn', 'seaborn']
+9.txt            0.0                   SCIKIT_LEARN                                   ['numpy', 'os', 'pandas', 'matplotlib', 're', 'sklearn', 'pystan', 'scipy', 'google']
+49.txt           0.8660254037844386    SCIKIT_LEARN_VISUALIZATION                     ['numpy', 'pandas', 'sklearn', 'itertools']
+4.txt            1.0                   TENSOR_FLOW                                    ['pickle', 'numpy', 'matplotlib', 'sys', 'time']
+3.txt            0.0                   STRUCTURED_DATA_VISUALIZATION                  ['pickle', 'numpy', 'os', 'pandas', 'matplotlib', 'math', 'glob', 'cv2', 'skimage']
+61.txt           0.0                   NUMPY_VISUALIZATION                            ['tensorflow', 'numpy', 'pandas', 'matplotlib', 're', 'sklearn', 'keras', 'IPython', 'gensim', 'nltk', 'tqdm']
+60.txt           0.0                   DEEP_NEURAL_NETWORKS                           ['numpy', 'torch', 'math', 'dlc_bci', 'utility']
+50.txt           0.0                   SCIKIT_LEARN_WITH_NATURAL_LANGUAGE_PROCESSING  ['os', 'pandas', 'matplotlib', 'xarray', 'metpy', 'datetime']
+52.txt           0.0                   STRUCTURED_DATA_VISUALIZATION_2                ['numpy', 'os', 'pandas', 'matplotlib', 'datetime', 'pandas_datareader', 'fix_yahoo_finance', 'cvxpy']
+6.txt            0.0                   IPython                                        ['numpy', 'matplotlib', 'cv2', 'keras']
+2.txt            0.0                   CS771                                          ['numpy', 'sklearn', 'mltools', 'xgboost']

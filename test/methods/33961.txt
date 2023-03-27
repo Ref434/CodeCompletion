@@ -2,6 +2,7 @@
 import pandas as pd
 import seaborn as sns
 from numpy import sqrt
+import numpy
 from sklearn import metrics
 from sklearn.svm import LinearSVC, SVC
 from sklearn.model_selection import KFold

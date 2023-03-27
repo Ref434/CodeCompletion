@@ -1,7 +1,7 @@
 import os
 import re
 import json
-
+from code_completion_lib.logger.logger import Logger
 
 class Parser:
 
@@ -14,11 +14,13 @@ class Parser:
     num_files: int = 0
 
     def __init__(self, parse_from: str, parse_to: str):
+        self.logger = Logger(__name__)
+
         self.parse_from = parse_from
         self.parse_to = parse_to
         self.num_files = sum(os.path.isfile(os.path.join(self.parse_from, f)) for f in os.listdir(self.parse_from))
 
-    def _get_notebook(self, notebook_path):
+    def _get_notebook(self, notebook_path: str):
         with open(notebook_path, 'r', encoding='utf-8') as notebook:
             try:
                 return json.load(notebook, strict=False)
@@ -40,7 +42,7 @@ class Parser:
         )
 
     def _save_languages(self, languages: dict):
-        with open(r"analysis\languages.json", "w") as write_file:
+        with open(r"analysis\jupyters\languages.json", "w") as write_file:
             json.dump(languages, write_file, indent=4)
 
     def check_language(self):
@@ -59,11 +61,13 @@ class Parser:
             except Exception:
                 failed += 1
 
-        print(f"{failed / self.num_files * 100}% failed")
+        try:
+            self.logger.info(f"{failed / self.num_files * 100}% failed in check_language func")
+        except ZeroDivisionError:
+            self.logger.error("ZeroDivisionError")
         self._save_languages(self.languages)
 
     def parse(self):
-        print("Parsing...")
         failed: int = 0
 
         for filename in os.listdir(self.parse_from):
@@ -88,4 +92,8 @@ class Parser:
                 except Exception:
                     failed += 1
 
-        print(f"{failed / self.num_files * 100}% failed")
+        try:
+            self.logger.info(f"{failed / self.num_files * 100}% failed in parse func")
+        except ZeroDivisionError:
+            self.logger.error("ZeroDivisionError")
+        self._save_languages(self.languages)

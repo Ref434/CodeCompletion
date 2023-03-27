@@ -1,10 +1,17 @@
 import importlib
 import sys
 import json
-from sklearn import *
-# from pandas import *
-import requests
-#from os import *
+import os
+from IPython import *
+from math import *
+from matplotlib.pyplot import *
+from pandas import *
+from requests import *
+from seaborn import *
+from sys import *
+from time import *
+from code_completion_lib import necessary_functions
+
 
 def get_methods(object, name_of_class, spacing=20):
     methodList = []
@@ -27,12 +34,14 @@ def get_methods(object, name_of_class, spacing=20):
 
     return description_method
 
+
 def isModuleExist(name):
     if importlib.util.find_spec(name) is not None:
         return True
     else:
         print(f"can't find the {name!r} module")
         return False
+
 
 def getModule(name):
     spec = importlib.util.find_spec(name)
@@ -45,16 +54,21 @@ def getModule(name):
 def writeData(name_of_file, data):
     print(name_of_file)
     with open(f'{name_of_file}.json', 'w') as outfile:
-        print(1)
         json.dump(data, outfile, indent=4)
 
+
 if __name__ == "__main__":
-    name = 'requests'
+
+    name = 'time'
     data = {}
     if isModuleExist(name):
         module = getModule(name)
         all_module = module.__all__
-        for module_class in all_module:
-            data[module_class] = get_methods(eval(str(module_class)), str(module_class) + '.')
+        # all_module = dir(module)
+        try:
+            for module_class in all_module:
+                data[module_class] = get_methods(str(eval(module_class)), str(module_class) + '.')
+        except Exception:
+            pass
 
     writeData(name, data)

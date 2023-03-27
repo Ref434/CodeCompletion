@@ -1,0 +1,10 @@
+code_completion_lib.parse_notebooks 2023-03-27 12:28:38,954 INFO 7.4074074074074066% failed in parse func
+code_completion_lib.parse_notebooks 2023-03-27 12:28:39,076 INFO 7.4074074074074066% failed in check_language func
+code_completion_lib.imports.imports 2023-03-27 12:28:39,150 INFO Find imports ended.
+code_completion_lib.code_completion 2023-03-27 12:28:39,182 INFO Clusterization ended
+code_completion_lib.methods.find_methods_in_code 2023-03-27 12:30:39,906 INFO Find methods ended.
+code_completion_lib.parse_notebooks 2023-03-27 12:55:31,690 INFO 7.4074074074074066% failed in parse func
+code_completion_lib.parse_notebooks 2023-03-27 12:55:31,835 INFO 7.4074074074074066% failed in check_language func
+code_completion_lib.imports.imports 2023-03-27 12:55:32,040 INFO Find imports ended.
+code_completion_lib.code_completion 2023-03-27 12:55:32,102 INFO Clusterization ended
+code_completion_lib.methods.find_methods_in_code 2023-03-27 12:57:36,102 INFO Find methods ended.
