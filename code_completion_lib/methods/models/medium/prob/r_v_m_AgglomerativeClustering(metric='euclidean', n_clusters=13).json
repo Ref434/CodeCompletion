@@ -1,0 +1,1660 @@
+{
+    "everything": {
+        "CLUSTER_4": {
+            "numpy.fromfile": 1.0
+        }
+    },
+    "scaler": {
+        "CLUSTER_11": {
+            "sklearn.preprocessing.MinMaxScaler": 1.0
+        }
+    },
+    "B": {
+        "CLUSTER_10": {
+            "math.ceil": 1.0
+        },
+        "CLUSTER_3": {
+            "numpy.imag": 1.0
+        }
+    },
+    "training_loss": {
+        "CLUSTER_7": {
+            "math.sqrt": 1.0
+        }
+    },
+    "durations": {
+        "CLUSTER_4": {
+            "pandas.concat": 1.0
+        }
+    },
+    "fig": {
+        "CLUSTER_0": {
+            "matplotlib.pyplot.gcf": 0.4,
+            "matplotlib.pyplot.figure": 0.6
+        },
+        "CLUSTER_6": {
+            "matplotlib.pyplot.figure": 1.0
+        },
+        "CLUSTER_4": {
+            "matplotlib.pyplot.figure": 1.0
+        },
+        "CLUSTER_5": {
+            "matplotlib.pyplot.figure": 1.0
+        }
+    },
+    "fig,ax": {
+        "CLUSTER_7": {
+            "matplotlib.pyplot.subplots": 1.0
+        },
+        "CLUSTER_11": {
+            "matplotlib.pyplot.subplots": 1.0
+        },
+        "CLUSTER_9": {
+            "matplotlib.pyplot.subplots": 1.0
+        },
+        "CLUSTER_6": {
+            "matplotlib.pyplot.subplots": 1.0
+        },
+        "CLUSTER_5": {
+            "matplotlib.pyplot.subplots": 1.0
+        },
+        "CLUSTER_4": {
+            "matplotlib.pyplot.subplots": 1.0
+        }
+    },
+    "flist": {
+        "CLUSTER_4": {
+            "os.listdir": 1.0
+        }
+    },
+    "ifpxy": {
+        "CLUSTER_0": {
+            "math.log": 1.0
+        }
+    },
+    "movies_list": {
+        "CLUSTER_12": {
+            "pandas.merge": 0.5454545454545454,
+            "pandas.concat": 0.2727272727272727,
+            "pandas.pivot_table": 0.18181818181818182
+        }
+    },
+    "X_train,X_test,y_train,y_test": {
+        "CLUSTER_7": {
+            "sklearn.model_selection.train_test_split": 1.0
+        },
+        "CLUSTER_4": {
+            "sklearn.model_selection.train_test_split": 1.0
+        },
+        "CLUSTER_5": {
+            "sklearn.model_selection.train_test_split": 1.0
+        }
+    },
+    "std": {
+        "CLUSTER_12": {
+            "numpy.std": 1.0
+        }
+    },
+    "lin_reg_2": {
+        "CLUSTER_7": {
+            "sklearn.linear_model.LinearRegression": 1.0
+        }
+    },
+    "score": {
+        "CLUSTER_7": {
+            "sklearn.model_selection.cross_val_score": 1.0
+        },
+        "CLUSTER_5": {
+            "sklearn.metrics.accuracy_score": 1.0
+        }
+    },
+    "pca": {
+        "CLUSTER_7": {
+            "sklearn.decomposition.PCA": 1.0
+        }
+    },
+    "outlier_data['date']": {
+        "CLUSTER_8": {
+            "pandas.to_datetime": 1.0
+        }
+    },
+    "df_l": {
+        "CLUSTER_11": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "axes": {
+        "CLUSTER_5": {
+            "matplotlib.pyplot.gca": 1.0
+        }
+    },
+    "df": {
+        "CLUSTER_8": {
+            "pandas.DataFrame": 1.0
+        },
+        "CLUSTER_1": {
+            "pandas.concat": 0.6666666666666666,
+            "pandas.DataFrame": 0.3333333333333333
+        },
+        "CLUSTER_5": {
+            "pandas.concat": 1.0
+        },
+        "CLUSTER_9": {
+            "pandas.read_csv": 0.5,
+            "pandas.DataFrame": 0.5
+        },
+        "CLUSTER_10": {
+            "pandas.read_json": 1.0
+        },
+        "CLUSTER_7": {
+            "pandas.concat": 0.6666666666666666,
+            "pandas.read_csv": 0.3333333333333333
+        },
+        "CLUSTER_11": {
+            "datetime.date": 1.0
+        }
+    },
+    "lm_tp": {
+        "CLUSTER_8": {
+            "sklearn.linear_model.LinearRegression": 1.0
+        }
+    },
+    "features": {
+        "CLUSTER_2": {
+            "numpy.array": 1.0
+        }
+    },
+    "delta": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        }
+    },
+    "writers_list": {
+        "CLUSTER_12": {
+            "pandas.read_sql": 0.3333333333333333,
+            "pandas.merge": 0.3333333333333333,
+            "pandas.read_csv": 0.3333333333333333
+        }
+    },
+    "fold": {
+        "CLUSTER_5": {
+            "sklearn.model_selection.StratifiedKFold": 1.0
+        }
+    },
+    "G": {
+        "CLUSTER_3": {
+            "numpy.real": 1.0
+        }
+    },
+    "rf": {
+        "CLUSTER_7": {
+            "sklearn.ensemble.RandomForestClassifier": 1.0
+        }
+    },
+    "fig,axes": {
+        "CLUSTER_11": {
+            "matplotlib.pyplot.subplots": 1.0
+        },
+        "CLUSTER_4": {
+            "matplotlib.pyplot.subplots": 1.0
+        },
+        "CLUSTER_12": {
+            "matplotlib.pyplot.subplots": 1.0
+        }
+    },
+    "featureScores": {
+        "CLUSTER_5": {
+            "pandas.concat": 1.0
+        }
+    },
+    "tr_finite": {
+        "CLUSTER_4": {
+            "matplotlib.pyplot.plot": 1.0
+        }
+    },
+    "roc_auc[\"macro\"]": {
+        "CLUSTER_4": {
+            "sklearn.metrics.auc": 1.0
+        }
+    },
+    "J2": {
+        "CLUSTER_3": {
+            "numpy.hstack": 1.0
+        }
+    },
+    "writer_ratings": {
+        "CLUSTER_12": {
+            "pandas.read_sql": 0.5,
+            "pandas.read_csv": 0.5
+        }
+    },
+    "action": {
+        "CLUSTER_1": {
+            "numpy.argmax": 1.0
+        }
+    },
+    "B_2line": {
+        "CLUSTER_3": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "cm": {
+        "CLUSTER_7": {
+            "sklearn.metrics.confusion_matrix": 1.0
+        },
+        "CLUSTER_5": {
+            "sklearn.metrics.confusion_matrix": 1.0
+        }
+    },
+    "cf": {
+        "CLUSTER_1": {
+            "numpy.array": 1.0
+        }
+    },
+    "french_words_counter": {
+        "CLUSTER_2": {
+            "collections.Counter": 1.0
+        }
+    },
+    "trainX,testX,trainy,testy": {
+        "CLUSTER_5": {
+            "sklearn.model_selection.train_test_split": 1.0
+        }
+    },
+    "df_r": {
+        "CLUSTER_11": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "poly_reg": {
+        "CLUSTER_7": {
+            "sklearn.preprocessing.PolynomialFeatures": 1.0
+        }
+    },
+    "data2": {
+        "CLUSTER_5": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "size": {
+        "CLUSTER_6": {
+            "numpy.prod": 1.0
+        }
+    },
+    "freqReviewDf": {
+        "CLUSTER_0": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "self.all_weights": {
+        "CLUSTER_6": {
+            "numpy.frombuffer": 1.0
+        }
+    },
+    "accuracies": {
+        "CLUSTER_5": {
+            "sklearn.model_selection.cross_val_score": 1.0
+        }
+    },
+    "pmi": {
+        "CLUSTER_0": {
+            "math.log": 1.0
+        }
+    },
+    "hotelDfRaw": {
+        "CLUSTER_0": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "fpr[\"micro\"],tpr[\"micro\"],_": {
+        "CLUSTER_4": {
+            "sklearn.metrics.roc_curve": 1.0
+        }
+    },
+    "figsize": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        }
+    },
+    "data": {
+        "CLUSTER_6": {
+            "matplotlib.pyplot.imread": 1.0
+        },
+        "CLUSTER_11": {
+            "pandas.read_csv": 1.0
+        },
+        "CLUSTER_5": {
+            "pandas.read_csv": 0.6,
+            "numpy.array": 0.2,
+            "pandas.DataFrame": 0.2
+        },
+        "CLUSTER_12": {
+            "pandas.DataFrame": 0.6666666666666666,
+            "pandas.read_csv": 0.3333333333333333
+        },
+        "CLUSTER_7": {
+            "pandas.DataFrame": 1.0
+        },
+        "CLUSTER_8": {
+            "pandas.read_csv": 1.0
+        },
+        "CLUSTER_1": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "sstot": {
+        "CLUSTER_7": {
+            "numpy.sum": 1.0
+        }
+    },
+    "pmidf": {
+        "CLUSTER_0": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "os.chdir(default_path)countries": {
+        "CLUSTER_8": {
+            "os.listdir": 1.0
+        }
+    },
+    "food_info": {
+        "CLUSTER_8": {
+            "pandas.read_csv": 0.5,
+            "pandas.DataFrame": 0.5
+        }
+    },
+    "DQ": {
+        "CLUSTER_3": {
+            "numpy.zeros_like": 1.0
+        }
+    },
+    "array": {
+        "CLUSTER_4": {
+            "numpy.load": 1.0
+        }
+    },
+    "r": {
+        "CLUSTER_10": {
+            "requests.get": 1.0
+        }
+    },
+    "b": {
+        "CLUSTER_3": {
+            "numpy.imag": 1.0
+        }
+    },
+    "x_values": {
+        "CLUSTER_12": {
+            "numpy.linspace": 1.0
+        }
+    },
+    "plot_list": {
+        "CLUSTER_12": {
+            "pandas.read_csv": 0.5,
+            "pandas.read_sql": 0.5
+        }
+    },
+    "channel_states": {
+        "CLUSTER_12": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "gross_list": {
+        "CLUSTER_12": {
+            "pandas.read_csv": 0.3333333333333333,
+            "pandas.read_sql": 0.3333333333333333,
+            "pandas.pivot_table": 0.3333333333333333
+        }
+    },
+    "au_1062bio": {
+        "CLUSTER_7": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "g": {
+        "CLUSTER_7": {
+            "seaborn.clustermap": 1.0
+        },
+        "CLUSTER_3": {
+            "numpy.real": 1.0
+        }
+    },
+    "diff": {
+        "CLUSTER_6": {
+            "numpy.asarray": 1.0
+        }
+    },
+    "frame": {
+        "CLUSTER_4": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "yhat": {
+        "CLUSTER_4": {
+            "numpy.argmax": 1.0
+        }
+    },
+    "alarms_over_1_min": {
+        "CLUSTER_4": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "stamp": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        }
+    },
+    "tic": {
+        "CLUSTER_3": {
+            "time.time": 1.0
+        }
+    },
+    "var": {
+        "CLUSTER_7": {
+            "numpy.cumsum": 1.0
+        }
+    },
+    "scale": {
+        "CLUSTER_7": {
+            "sklearn.preprocessing.StandardScaler": 1.0
+        }
+    },
+    "ax": {
+        "CLUSTER_7": {
+            "matplotlib.pyplot.subplot": 1.0
+        },
+        "CLUSTER_6": {
+            "matplotlib.pyplot.gca": 0.5,
+            "matplotlib.pyplot.subplot": 0.5
+        },
+        "CLUSTER_5": {
+            "matplotlib.pyplot.axes": 1.0
+        }
+    },
+    "X_test": {
+        "CLUSTER_11": {
+            "numpy.reshape": 0.5,
+            "numpy.array": 0.5
+        },
+        "CLUSTER_3": {
+            "numpy.reshape": 1.0
+        }
+    },
+    "fpr,tpr,thresholds": {
+        "CLUSTER_4": {
+            "sklearn.metrics.roc_curve": 1.0
+        }
+    },
+    "start": {
+        "CLUSTER_5": {
+            "numpy.datetime64": 1.0
+        },
+        "CLUSTER_10": {
+            "datetime.datetime.now": 1.0
+        }
+    },
+    "outlier_data['residual'][i]": {
+        "CLUSTER_8": {
+            "numpy.absolute": 1.0
+        }
+    },
+    "pred": {
+        "CLUSTER_4": {
+            "numpy.argmax": 1.0
+        }
+    },
+    "resampled_df": {
+        "CLUSTER_7": {
+            "pandas.concat": 1.0
+        }
+    },
+    "pmineglist": {
+        "CLUSTER_0": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "big_mat2": {
+        "CLUSTER_3": {
+            "numpy.ones": 1.0
+        }
+    },
+    "X": {
+        "CLUSTER_7": {
+            "pandas.get_dummies": 1.0
+        }
+    },
+    "price": {
+        "CLUSTER_8": {
+            "numpy.where": 1.0
+        }
+    },
+    "H": {
+        "CLUSTER_3": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "sentences": {
+        "CLUSTER_2": {
+            "numpy.array": 1.0
+        }
+    },
+    "per_school_summary_df[\"SpendingRanges(PerStudent)\"]": {
+        "CLUSTER_8": {
+            "pandas.cut": 1.0
+        }
+    },
+    "mismP": {
+        "CLUSTER_3": {
+            "numpy.append": 0.6666666666666666,
+            "numpy.array": 0.3333333333333333
+        }
+    },
+    "y": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        },
+        "CLUSTER_1": {
+            "numpy.sin": 1.0
+        }
+    },
+    "im": {
+        "CLUSTER_6": {
+            "numpy.array": 1.0
+        }
+    },
+    "images": {
+        "CLUSTER_4": {
+            "numpy.transpose": 0.5,
+            "numpy.reshape": 0.5
+        }
+    },
+    "model": {
+        "CLUSTER_5": {
+            "sklearn.linear_model.LogisticRegression": 0.4,
+            "sklearn.tree.DecisionTreeRegressor": 0.2,
+            "sklearn.ensemble.ExtraTreesClassifier": 0.2,
+            "sklearn.ensemble.RandomForestRegressor": 0.2
+        }
+    },
+    "small_df": {
+        "CLUSTER_1": {
+            "pandas.concat": 1.0
+        }
+    },
+    "response": {
+        "CLUSTER_9": {
+            "requests.get": 1.0
+        }
+    },
+    "plt.imshow(output_weight.reshape([2,20]),cmap": {
+        "CLUSTER_2": {
+            "matplotlib.pyplot.get_cmap": 1.0
+        }
+    },
+    "test_acc": {
+        "CLUSTER_2": {
+            "numpy.mean": 1.0
+        }
+    },
+    "f3,axs3": {
+        "CLUSTER_5": {
+            "matplotlib.pyplot.subplots": 1.0
+        }
+    },
+    "X_TF_train": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        }
+    },
+    "returns": {
+        "CLUSTER_1": {
+            "numpy.dot": 1.0
+        }
+    },
+    "indices": {
+        "CLUSTER_5": {
+            "numpy.argsort": 1.0
+        },
+        "CLUSTER_12": {
+            "numpy.argsort": 1.0
+        }
+    },
+    "zeros": {
+        "CLUSTER_1": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "all_durations": {
+        "CLUSTER_4": {
+            "pandas.concat": 1.0
+        }
+    },
+    "mdl": {
+        "CLUSTER_9": {
+            "sklearn.tree.DecisionTreeClassifier": 1.0
+        }
+    },
+    "anddirty_data['time'][i]<": {
+        "CLUSTER_8": {
+            "datetime.timedelta": 1.0
+        }
+    },
+    "dirty_data['time']": {
+        "CLUSTER_8": {
+            "pandas.to_timedelta": 1.0
+        }
+    },
+    "numbered": {
+        "CLUSTER_4": {
+            "pandas.Series": 1.0
+        }
+    },
+    "summary": {
+        "CLUSTER_5": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "writer": {
+        "CLUSTER_4": {
+            "pandas.ExcelWriter": 1.0
+        }
+    },
+    "alarm_settings_2[recording]": {
+        "CLUSTER_4": {
+            "pandas.concat": 1.0
+        }
+    },
+    "skf": {
+        "CLUSTER_4": {
+            "sklearn.model_selection.StratifiedKFold": 1.0
+        }
+    },
+    "emoji_pattern": {
+        "CLUSTER_8": {
+            "re.compile": 1.0
+        }
+    },
+    "y_train": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        }
+    },
+    "B_line_inv": {
+        "CLUSTER_3": {
+            "numpy.linalg.inv": 1.0
+        }
+    },
+    "df_json": {
+        "CLUSTER_8": {
+            "pandas.read_json": 1.0
+        }
+    },
+    "kf": {
+        "CLUSTER_5": {
+            "sklearn.model_selection.KFold": 1.0
+        }
+    },
+    "correct_scores": {
+        "CLUSTER_3": {
+            "numpy.asarray": 1.0
+        }
+    },
+    "budget_df['release_date']": {
+        "CLUSTER_4": {
+            "pandas.to_datetime": 1.0
+        }
+    },
+    "data1": {
+        "CLUSTER_5": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "sc_X": {
+        "CLUSTER_7": {
+            "sklearn.preprocessing.StandardScaler": 1.0
+        }
+    },
+    "mpaa_list": {
+        "CLUSTER_12": {
+            "pandas.read_sql": 0.5,
+            "pandas.read_csv": 0.5
+        }
+    },
+    "df_train": {
+        "CLUSTER_7": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "xtrain,xtest,ytrain,ytest": {
+        "CLUSTER_5": {
+            "sklearn.model_selection.train_test_split": 1.0
+        }
+    },
+    "train": {
+        "CLUSTER_5": {
+            "pandas.read_csv": 1.0
+        },
+        "CLUSTER_7": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "training_data_len": {
+        "CLUSTER_11": {
+            "math.ceil": 1.0
+        }
+    },
+    "Y": {
+        "CLUSTER_3": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "cf_a": {
+        "CLUSTER_1": {
+            "numpy.array": 1.0
+        }
+    },
+    "bins": {
+        "CLUSTER_1": {
+            "numpy.linspace": 1.0
+        }
+    },
+    "self.key_pts_frame": {
+        "CLUSTER_6": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "v": {
+        "CLUSTER_5": {
+            "pandas.concat": 1.0
+        }
+    },
+    "stats_all": {
+        "CLUSTER_4": {
+            "pandas.concat": 1.0
+        }
+    },
+    "miScoredf": {
+        "CLUSTER_0": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "df_clean[\"date\"]": {
+        "CLUSTER_9": {
+            "pandas.to_datetime": 1.0
+        }
+    },
+    "actors": {
+        "CLUSTER_12": {
+            "pandas.read_csv": 0.5,
+            "pandas.read_sql": 0.5
+        }
+    },
+    "DV": {
+        "CLUSTER_3": {
+            "numpy.dot": 1.0
+        }
+    },
+    "submission": {
+        "CLUSTER_7": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "f,ax": {
+        "CLUSTER_7": {
+            "matplotlib.pyplot.subplots": 1.0
+        }
+    },
+    "counter": {
+        "CLUSTER_0": {
+            "collections.Counter": 1.0
+        }
+    },
+    "f_test": {
+        "CLUSTER_7": {
+            "numpy.var": 1.0
+        }
+    },
+    "X,y": {
+        "CLUSTER_7": {
+            "sklearn.datasets.make_circles": 1.0
+        }
+    },
+    "AUC": {
+        "CLUSTER_7": {
+            "scipy.integrate.simps": 1.0
+        }
+    },
+    "DP": {
+        "CLUSTER_3": {
+            "numpy.zeros_like": 1.0
+        }
+    },
+    "food_review_total": {
+        "CLUSTER_8": {
+            "pandas.concat": 1.0
+        }
+    },
+    "J1": {
+        "CLUSTER_3": {
+            "numpy.hstack": 1.0
+        }
+    },
+    "y_test": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        }
+    },
+    "X_std_test": {
+        "CLUSTER_7": {
+            "sklearn.preprocessing.StandardScaler": 1.0
+        }
+    },
+    "directors_list": {
+        "CLUSTER_12": {
+            "pandas.read_sql": 0.3333333333333333,
+            "pandas.merge": 0.3333333333333333,
+            "pandas.read_csv": 0.3333333333333333
+        }
+    },
+    "a1": {
+        "CLUSTER_1": {
+            "numpy.array": 1.0
+        }
+    },
+    "tempCounter": {
+        "CLUSTER_0": {
+            "collections.Counter": 1.0
+        }
+    },
+    "X_test_cnn": {
+        "CLUSTER_4": {
+            "numpy.expand_dims": 1.0
+        }
+    },
+    "N": {
+        "CLUSTER_3": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "batch_y": {
+        "CLUSTER_2": {
+            "numpy.array": 1.0
+        }
+    },
+    "clf": {
+        "CLUSTER_4": {
+            "sklearn.svm.LinearSVC": 1.0
+        },
+        "CLUSTER_7": {
+            "sklearn.svm.SVR": 1.0
+        }
+    },
+    "mlp": {
+        "CLUSTER_7": {
+            "sklearn.neural_network.MLPRegressor": 1.0
+        }
+    },
+    "max_sharpe[date]": {
+        "CLUSTER_1": {
+            "numpy.argmax": 1.0
+        }
+    },
+    "clinical_details": {
+        "CLUSTER_4": {
+            "pandas.read_excel": 1.0
+        }
+    },
+    "mismQ": {
+        "CLUSTER_3": {
+            "numpy.append": 0.6666666666666666,
+            "numpy.array": 0.3333333333333333
+        }
+    },
+    "a": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        },
+        "CLUSTER_8": {
+            "numpy.array": 1.0
+        },
+        "CLUSTER_1": {
+            "numpy.array": 1.0
+        }
+    },
+    "pmi_dist_matrix": {
+        "CLUSTER_5": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "dinner_prices": {
+        "CLUSTER_8": {
+            "numpy.linalg.solve": 1.0
+        }
+    },
+    "model_tp": {
+        "CLUSTER_8": {
+            "sklearn.linear_model.LinearRegression": 1.0
+        }
+    },
+    "actor_ratings": {
+        "CLUSTER_12": {
+            "pandas.read_sql": 1.0
+        }
+    },
+    "normalSample": {
+        "CLUSTER_5": {
+            "numpy.insert": 1.0
+        }
+    },
+    "cities": {
+        "CLUSTER_8": {
+            "os.listdir": 1.0
+        }
+    },
+    "Q1": {
+        "CLUSTER_8": {
+            "numpy.percentile": 1.0
+        }
+    },
+    "mean_tpr": {
+        "CLUSTER_4": {
+            "numpy.zeros_like": 1.0
+        }
+    },
+    "key_pts_copy": {
+        "CLUSTER_6": {
+            "numpy.copy": 1.0
+        }
+    },
+    "x_train": {
+        "CLUSTER_11": {
+            "numpy.reshape": 1.0
+        }
+    },
+    "x": {
+        "CLUSTER_4": {
+            "numpy.load": 1.0
+        },
+        "CLUSTER_1": {
+            "numpy.linspace": 1.0
+        },
+        "CLUSTER_0": {
+            "matplotlib.pyplot.figure": 1.0
+        }
+    },
+    "ones": {
+        "CLUSTER_1": {
+            "numpy.ones": 1.0
+        }
+    },
+    "big_mat1": {
+        "CLUSTER_3": {
+            "numpy.ones": 1.0
+        }
+    },
+    "dataset": {
+        "CLUSTER_5": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "fig1,ax1": {
+        "CLUSTER_7": {
+            "matplotlib.pyplot.subplots": 1.0
+        }
+    },
+    "mean_image": {
+        "CLUSTER_3": {
+            "numpy.mean": 1.0
+        }
+    },
+    "rmse": {
+        "CLUSTER_7": {
+            "numpy.sqrt": 1.0
+        }
+    },
+    "dataframe": {
+        "CLUSTER_12": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "alarm_t": {
+        "CLUSTER_4": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "x_train,y_train": {
+        "CLUSTER_11": {
+            "numpy.array": 1.0
+        }
+    },
+    "error": {
+        "CLUSTER_4": {
+            "numpy.var": 1.0
+        }
+    },
+    "J": {
+        "CLUSTER_3": {
+            "numpy.linalg.inv": 1.0
+        }
+    },
+    "roc_auc+": {
+        "CLUSTER_4": {
+            "sklearn.metrics.auc": 1.0
+        }
+    },
+    "class_names": {
+        "CLUSTER_4": {
+            "os.listdir": 1.0
+        }
+    },
+    "labels": {
+        "CLUSTER_4": {
+            "numpy.fromfile": 1.0
+        }
+    },
+    "x_test": {
+        "CLUSTER_11": {
+            "numpy.array": 0.5,
+            "numpy.reshape": 0.5
+        }
+    },
+    "B_line": {
+        "CLUSTER_3": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "df_raw": {
+        "CLUSTER_5": {
+            "pandas.read_excel": 0.5,
+            "pandas.get_dummies": 0.5
+        }
+    },
+    "tij": {
+        "CLUSTER_3": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "dummy_variable_1": {
+        "CLUSTER_1": {
+            "pandas.get_dummies": 1.0
+        }
+    },
+    "classes": {
+        "CLUSTER_7": {
+            "numpy.unique": 1.0
+        },
+        "CLUSTER_4": {
+            "numpy.unique": 1.0
+        }
+    },
+    "self.fires": {
+        "CLUSTER_1": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "tjj": {
+        "CLUSTER_3": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "tiny_image": {
+        "CLUSTER_1": {
+            "numpy.array": 1.0
+        }
+    },
+    "pca_ll_dist_matrix": {
+        "CLUSTER_5": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "y_true,y_pred": {
+        "CLUSTER_7": {
+            "numpy.array": 1.0
+        }
+    },
+    "food_info_total": {
+        "CLUSTER_8": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "A": {
+        "CLUSTER_10": {
+            "math.ceil": 1.0
+        }
+    },
+    "movie_ratings": {
+        "CLUSTER_12": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "v_abs_mean": {
+        "CLUSTER_12": {
+            "numpy.mean": 1.0
+        }
+    },
+    "tii": {
+        "CLUSTER_3": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "imageTest": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        }
+    },
+    "pmiposlist": {
+        "CLUSTER_0": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "res": {
+        "CLUSTER_4": {
+            "numpy.argmax": 1.0
+        }
+    },
+    "start_time": {
+        "CLUSTER_3": {
+            "time.time": 1.0
+        }
+    },
+    "dtree": {
+        "CLUSTER_5": {
+            "sklearn.tree.DecisionTreeClassifier": 1.0
+        }
+    },
+    "fires": {
+        "CLUSTER_1": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "X_std": {
+        "CLUSTER_7": {
+            "sklearn.preprocessing.StandardScaler": 1.0
+        }
+    },
+    "mask": {
+        "CLUSTER_1": {
+            "numpy.where": 1.0
+        }
+    },
+    "X_train": {
+        "CLUSTER_3": {
+            "numpy.reshape": 1.0
+        }
+    },
+    "reloaded_df": {
+        "CLUSTER_7": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "dirty_data['order_items'][i]": {
+        "CLUSTER_8": {
+            "re.sub": 1.0
+        }
+    },
+    "cmap": {
+        "CLUSTER_0": {
+            "seaborn.cubehelix_palette": 1.0
+        }
+    },
+    "raw_dist_matrix": {
+        "CLUSTER_5": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "X_TF_pred": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        }
+    },
+    "add_cf": {
+        "CLUSTER_1": {
+            "numpy.array": 1.0
+        }
+    },
+    "bestfeatures": {
+        "CLUSTER_5": {
+            "sklearn.feature_selection.SelectKBest": 1.0
+        }
+    },
+    "recording_times_frame": {
+        "CLUSTER_4": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "X_val": {
+        "CLUSTER_3": {
+            "numpy.reshape": 1.0
+        }
+    },
+    "max_sims": {
+        "CLUSTER_5": {
+            "collections.Counter": 1.0
+        }
+    },
+    "kmeans": {
+        "CLUSTER_7": {
+            "sklearn.cluster.KMeans": 1.0
+        }
+    },
+    "alarm_stats_cum_rec": {
+        "CLUSTER_4": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "total_recording_time": {
+        "CLUSTER_4": {
+            "datetime.timedelta": 1.0
+        }
+    },
+    "sc": {
+        "CLUSTER_5": {
+            "sklearn.preprocessing.StandardScaler": 1.0
+        }
+    },
+    "train_data": {
+        "CLUSTER_7": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "range_arrays": {
+        "CLUSTER_1": {
+            "numpy.arange": 1.0
+        }
+    },
+    "val_class_names": {
+        "CLUSTER_4": {
+            "os.listdir": 1.0
+        }
+    },
+    "out_index.append(i)Q1": {
+        "CLUSTER_8": {
+            "numpy.percentile": 1.0
+        }
+    },
+    "t": {
+        "CLUSTER_5": {
+            "pandas.concat": 1.0
+        }
+    },
+    "qtable": {
+        "CLUSTER_1": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "x_train_up": {
+        "CLUSTER_4": {
+            "numpy.stack": 1.0
+        }
+    },
+    "yhat_cnn": {
+        "CLUSTER_4": {
+            "numpy.argmax": 1.0
+        }
+    },
+    "budget_list": {
+        "CLUSTER_12": {
+            "pandas.read_sql": 0.5,
+            "pandas.read_csv": 0.5
+        }
+    },
+    "num_complete_minibatches": {
+        "CLUSTER_5": {
+            "math.floor": 1.0
+        }
+    },
+    "roc_auc[\"micro\"]": {
+        "CLUSTER_4": {
+            "sklearn.metrics.auc": 1.0
+        }
+    },
+    "Q_Calc": {
+        "CLUSTER_3": {
+            "numpy.zeros_like": 1.0
+        }
+    },
+    "pca_pmi_dist_matrix": {
+        "CLUSTER_5": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "X_train_cnn": {
+        "CLUSTER_4": {
+            "numpy.expand_dims": 1.0
+        }
+    },
+    "movies": {
+        "CLUSTER_12": {
+            "pandas.read_sql": 0.5,
+            "pandas.read_csv": 0.5
+        }
+    },
+    "test": {
+        "CLUSTER_7": {
+            "pandas.read_csv": 1.0
+        },
+        "CLUSTER_5": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "n": {
+        "CLUSTER_1": {
+            "numpy.array": 1.0
+        }
+    },
+    "ss": {
+        "CLUSTER_7": {
+            "pandas.concat": 1.0
+        }
+    },
+    "principalDf": {
+        "CLUSTER_7": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "lunch_prices": {
+        "CLUSTER_8": {
+            "numpy.linalg.solve": 1.0
+        }
+    },
+    "embedding_matrix": {
+        "CLUSTER_5": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "missing_data['date']": {
+        "CLUSTER_8": {
+            "pandas.to_datetime": 1.0
+        }
+    },
+    "df_capacitances": {
+        "CLUSTER_12": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "ys": {
+        "CLUSTER_2": {
+            "numpy.array": 1.0
+        }
+    },
+    "wine": {
+        "CLUSTER_5": {
+            "sklearn.datasets.load_wine": 1.0
+        }
+    },
+    "image_copy": {
+        "CLUSTER_6": {
+            "numpy.copy": 1.0
+        }
+    },
+    "spin": {
+        "CLUSTER_3": {
+            "random.randint": 1.0
+        }
+    },
+    "total_time": {
+        "CLUSTER_3": {
+            "time.time": 1.0
+        }
+    },
+    "df_1": {
+        "CLUSTER_7": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "cf1": {
+        "CLUSTER_1": {
+            "numpy.array": 1.0
+        }
+    },
+    "sample": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        }
+    },
+    "alarm_stats_cum_total": {
+        "CLUSTER_4": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "frame1": {
+        "CLUSTER_2": {
+            "matplotlib.pyplot.gca": 1.0
+        }
+    },
+    "sklearn_pca": {
+        "CLUSTER_7": {
+            "sklearn.decomposition.PCA": 1.0
+        }
+    },
+    "df['horsepower-binned']": {
+        "CLUSTER_1": {
+            "pandas.cut": 1.0
+        }
+    },
+    "df_test": {
+        "CLUSTER_8": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "per_school_summary_df": {
+        "CLUSTER_8": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "weights/": {
+        "CLUSTER_1": {
+            "numpy.sum": 1.0
+        }
+    },
+    "reading_scores_by_grade": {
+        "CLUSTER_8": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "L": {
+        "CLUSTER_3": {
+            "numpy.zeros": 1.0
+        }
+    },
+    "food_review_merge": {
+        "CLUSTER_8": {
+            "pandas.merge": 1.0
+        }
+    },
+    "alarms_over_1_hour": {
+        "CLUSTER_4": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "yhat_mlp": {
+        "CLUSTER_4": {
+            "numpy.argmax": 1.0
+        }
+    },
+    "mean_fpr": {
+        "CLUSTER_4": {
+            "numpy.linspace": 1.0
+        }
+    },
+    "x_test_up": {
+        "CLUSTER_4": {
+            "numpy.stack": 1.0
+        }
+    },
+    "estimator": {
+        "CLUSTER_7": {
+            "sklearn.linear_model.LinearRegression": 1.0
+        }
+    },
+    "ind": {
+        "CLUSTER_4": {
+            "numpy.arange": 1.0
+        }
+    },
+    "sample_array": {
+        "CLUSTER_1": {
+            "numpy.array": 1.0
+        }
+    },
+    "data3": {
+        "CLUSTER_5": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "data['dist']": {
+        "CLUSTER_7": {
+            "numpy.sqrt": 1.0
+        }
+    },
+    "self._data": {
+        "CLUSTER_2": {
+            "numpy.hstack": 1.0
+        }
+    },
+    "director_ratings": {
+        "CLUSTER_12": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "s[\"dW\"+str(l+1)]": {
+        "CLUSTER_5": {
+            "numpy.zeros_like": 1.0
+        }
+    },
+    "df_food_review": {
+        "CLUSTER_8": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "y_TF_train": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        }
+    },
+    "class_sort": {
+        "CLUSTER_6": {
+            "numpy.argsort": 1.0
+        }
+    },
+    "tsne": {
+        "CLUSTER_7": {
+            "sklearn.manifold.TSNE": 1.0
+        }
+    },
+    "dfcolumns": {
+        "CLUSTER_5": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "random_df": {
+        "CLUSTER_7": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "train_Y": {
+        "CLUSTER_7": {
+            "numpy.log1p": 1.0
+        }
+    },
+    "budget_df": {
+        "CLUSTER_4": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "upperPartSelector": {
+        "CLUSTER_5": {
+            "numpy.array": 1.0
+        }
+    },
+    "files": {
+        "CLUSTER_4": {
+            "os.listdir": 1.0
+        }
+    },
+    "genres_list": {
+        "CLUSTER_12": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "reviewDf": {
+        "CLUSTER_0": {
+            "pandas.DataFrame": 1.0
+        }
+    },
+    "a3": {
+        "CLUSTER_1": {
+            "numpy.array": 1.0
+        }
+    },
+    "v_filtered_mean": {
+        "CLUSTER_12": {
+            "numpy.mean": 1.0
+        }
+    },
+    "y_TF_pred": {
+        "CLUSTER_4": {
+            "numpy.array": 1.0
+        }
+    },
+    "a2": {
+        "CLUSTER_1": {
+            "numpy.array": 1.0
+        }
+    },
+    "data_branches": {
+        "CLUSTER_3": {
+            "numpy.loadtxt": 1.0
+        }
+    },
+    "data['DATE']": {
+        "CLUSTER_11": {
+            "pandas.to_datetime": 1.0
+        }
+    },
+    "u0": {
+        "CLUSTER_1": {
+            "numpy.ones": 1.0
+        }
+    },
+    "return(100.0*np.sum(np.argmax(predictions,1)": {
+        "CLUSTER_2": {
+            "numpy.argmax": 1.0
+        }
+    },
+    "cwd": {
+        "CLUSTER_10": {
+            "os.getcwd": 1.0
+        }
+    },
+    "trained_label": {
+        "CLUSTER_6": {
+            "numpy.array": 1.0
+        }
+    },
+    "dirty_data['date']": {
+        "CLUSTER_8": {
+            "pandas.to_datetime": 1.0
+        }
+    },
+    "regr": {
+        "CLUSTER_7": {
+            "sklearn.ensemble.RandomForestRegressor": 1.0
+        }
+    },
+    "dfA": {
+        "CLUSTER_12": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "school_data_df": {
+        "CLUSTER_8": {
+            "pandas.read_csv": 1.0
+        }
+    },
+    "X_grid": {
+        "CLUSTER_7": {
+            "numpy.arange": 1.0
+        }
+    }
+}

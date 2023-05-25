@@ -9,8 +9,10 @@ from code_completion_lib.logger.logger import Logger
 class Imports:
     path: str = None
 
-    def __init__(self, path: str):
-        self.logger = Logger(__name__)
+    def __init__(self, path: str, size: str, logger):
+        self.size = size
+        self.logger = logger
+        self.logger.set_name(__name__)
         self.path = path
 
     def _line_processing(self, line: list, format: str = 'default'):
@@ -75,6 +77,8 @@ class Imports:
 
     def process(self):
 
+        self.logger.info(f"size = {self.size}")
+
         # List of imports for each notebook [[imports for first notebook][imports for second notebook]...]
         all_imports: list = []
 
@@ -125,14 +129,14 @@ class Imports:
 
             csv_imports.append(tmp)
 
-        write_as_csv(csv_imports, r'code_completion_lib\imports\imports.csv', 'w')
+        write_as_csv(csv_imports, r'code_completion_lib\imports\imports_'+self.size+'.csv', 'w')
 
         # Removing infrequent imports (less than 1%) to exclude custom imports
-        df = pd.read_csv(r'code_completion_lib\imports\imports.csv')
+        df = pd.read_csv(r'code_completion_lib\imports\imports_'+self.size+'.csv')
         num = int(df.count()[0] * 0.01)
         tmp = df.iloc[:, 1:]
         df = df.drop(columns=tmp.columns[tmp.sum() <= num])
         df = df.loc[~(df.iloc[:, 1:] == 0).all(axis=1)]
-        df.to_csv(r'code_completion_lib\imports\preprocessing_imports.csv')
+        df.to_csv(r'code_completion_lib\imports\preprocessing_imports_'+self.size+'.csv')
 
         self.logger.info("Find imports ended.")

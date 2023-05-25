@@ -1,0 +1,4 @@
+varible_name,method,"AgglomerativeClustering(metric='euclidean', n_clusters=13)","KMeans(n_clusters=13, n_init='auto', random_state=0)",MeanShift(bandwidth=2.3),"SpectralClustering(assign_labels='discretize', n_clusters=13, random_state=0)"
+test_acc,numpy.mean,CLUSTER_11,CLUSTER_9,CLUSTER_0,CLUSTER_0
+self._data,numpy.hstack,CLUSTER_11,CLUSTER_9,CLUSTER_0,CLUSTER_0
+self._data,numpy.vstack,CLUSTER_11,CLUSTER_9,CLUSTER_0,CLUSTER_0

@@ -2,18 +2,22 @@ import logging
 
 
 class Logger:
-    def __init__(self, name):
+    def __init__(self, name, mode="a"):
         self.logger = logging.getLogger(name)
         self.logger.setLevel(logging.INFO)
 
         # настройка обработчика и форматировщика для logger
-        self.handler = logging.FileHandler(r"code_completion_lib\logger\logger.log", mode='a')
+        self.handler = logging.FileHandler(r"code_completion_lib\logger\logger.log", mode=mode)
         formatter = logging.Formatter("%(name)s %(asctime)s %(levelname)s %(message)s")
 
         # добавление форматировщика к обработчику
         self.handler.setFormatter(formatter)
         # добавление обработчика к логгеру
         self.logger.addHandler(self.handler)
+
+
+    def set_name(self, name):
+        self.logger.name = name
 
     def info(self, message):
         self.logger.info(message)

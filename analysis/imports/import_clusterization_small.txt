@@ -1,0 +1,149 @@
+---------------------------------------------------------------------------
+3131 notebooks
+MeanShift(bandwidth=2.3)
+Clustering time: 44.00029015541077
+Silhouette Coefficient: 0.183
+Davies-Bouldin Index: 1.082
+labels:
+[3059, 2, 8, 3, 2, 5, 3, 2, 1, 4, 4, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 1, 3, 2, 1, 1, 2, 1, 3, 2, 3, 1, 2, 3]
+Prediction time: 0.009929180145263672
+found 34 clusters
+1005.txt         0.8379678063753986    Cluster_0                                      ['numpy', 'pandas', 'matplotlib']
+10854.txt        0.0                   Cluster_1                                      ['pickle', 'os', 'sklearn', 'h5py', 'scipy', 'matplotlib', 'sys', 'pylab', 'mpl_toolkits']
+1109.txt         1.4197270864500684    Cluster_2                                      ['pickle', 'numpy', 'sklearn', 'cv2', 'scipy', 'matplotlib', 'glob', 'time', 'IPython', 'skimage']
+11605.txt        1.2909944487358058    Cluster_3                                      ['tensorflow', 'pickle', 'numpy', 'os', 'math', 'sklearn', 'matplotlib', 'time', 'sys', 'PIL', 'datetime', 'requests', 'json']
+12477.txt        1.3228756555322954    Cluster_4                                      ['numpy', 'warnings', 'pandas', 'random', 'sklearn', 'scipy', 'matplotlib', 'keras', 'nltk', 're', 'google']
+13399.txt        1.3711309200802089    Cluster_5                                      ['tensorflow', 'numpy', 'os', 'pandas', 'sklearn', 'cv2', 'matplotlib', 'keras', 'tqdm', 'IPython']
+11815.txt        1.2472191289246473    Cluster_6                                      ['tensorflow', 'numpy', 'os', 'pandas', 'sklearn', 'matplotlib', 'keras', 'nltk', 're', 'io']
+11058.txt        1.5                   Cluster_7                                      ['tensorflow', 'numpy', 'os', 'pandas', 'math', 'random', 'sklearn', 'cv2', 'scipy', 'matplotlib', 'seaborn', 're', 'sys', 'utils', 'IPython', 'skimage', 'csv']
+1162.txt         0.0                   Cluster_8                                      ['tensorflow', 'numpy', 'os', 'pandas', 'math', 'random', 'sklearn', 'cv2', 'matplotlib', 'keras', 'glob', 'time', 'sys', 'tqdm', 'json', 'pathlib', 'io']
+10451.txt        1.4142135623730951    Cluster_9                                      ['tensorflow', 'numpy', 'os', 'pandas', 'random', 'statsmodels', 'matplotlib', 'seaborn', 'time', 'sys', 'collections', 'datetime']
+10475.txt        1.6393596310755       Cluster_10                                     ['tensorflow', 'numpy', 'os', 'pandas', 'cv2', '__future__', 'time', 'sys', 'requests', 'utils', 'IPython']
+10380.txt        0.0                   Cluster_11                                     ['tensorflow', 'numpy', 'cv2', 'matplotlib', 'keras', 'time', 'itertools', 'PIL', 'tqdm', 'json']
+10852.txt        1.3228756555322954    Cluster_12                                     ['tensorflow', 'numpy', 'scipy', 'matplotlib', 'seaborn', 're', 'collections', 'PIL', 'tqdm', 'utils']
+12770.txt        0.0                   Cluster_13                                     ['pickle', 'numpy', 'os', 'warnings', 'pandas', 'math', 'random', 'sklearn', 'cv2', 'h5py', 'matplotlib', 'keras', '__future__', 'glob', 'google', 'tqdm']
+11199.txt        1.5                   Cluster_14                                     ['pickle', 'numpy', 'os', 'warnings', 'pandas', 'sklearn', 'matplotlib', 'seaborn', 'string', 'nltk', 're', 'bs4', 'tqdm']
+11228.txt        0.0                   Cluster_15                                     ['pickle', 'numpy', 'os', 'random', 'cv2', 'matplotlib', 'keras', 'glob', 'time', 'datetime', 'plotly', 'copy']
+12621.txt        0.0                   Cluster_16                                     ['pickle', 'numpy', 'os', 'random', '__future__', 'string', 're', 'torch', 'time', 'google', 'json', 'io']
+13784.txt        0.0                   Cluster_17                                     ['pickle', 'numpy', 'pandas', 'math', 'random', 'scipy', 'matplotlib', 'string', 're', 'itertools', 'collections', 'tqdm']
+10576.txt        1.4142135623730951    Cluster_18                                     ['pickle', 'numpy', 'pandas', 'math', 'statsmodels', 'matplotlib', 'seaborn', 'time', 'datetime', 'requests', 'bs4', 'json']
+12990.txt        0.0                   Cluster_19                                     ['numpy', 'os', 'warnings', 'pandas', 'math', 'random', 'sklearn', 'cv2', 'scipy', 'matplotlib', 'seaborn', 'torch', 'time', 'sys', 'tqdm', 'IPython', 'skimage', 'json', 'copy', 'pathlib']
+13709.txt        0.0                   Cluster_20                                     ['numpy', 'os', 'warnings', 'pandas', 'random', 'sklearn', 'cv2', 'matplotlib', 'glob', 'torch', 'time', 'datetime', 'skimage', 'pathlib']
+13589.txt        0.0                   Cluster_21                                     ['numpy', 'os', 'pandas', 'xgboost', 'sklearn', 'scipy', 'matplotlib', 'seaborn', 'nltk', 'time', 'collections', 'PIL', 'datetime', 'urllib', 'plotly', 'json']
+10937.txt        1.4529663145135578    Cluster_22                                     ['numpy', 'os', 'pandas', 'sklearn', 'matplotlib', 'torch', 'torchvision', 'time', 'skimage', 'copy']
+13144.txt        1.5                   Cluster_23                                     ['numpy', 'os', 'pandas', 'random', 'sklearn', 'string', 're', 'time', 'sys', 'collections', 'requests', 'bs4', 'IPython', 'urllib', 'csv', 'io']
+1331.txt         0.0                   Cluster_24                                     ['numpy', 'os', 'pandas', 'cv2', 'scipy', 'matplotlib', 'seaborn', 'glob', 'PIL', 'IPython', 'skimage', 'copy', 'pathlib']
+11861.txt        0.0                   Cluster_25                                     ['numpy', 'os', 'math', 'random', 'sklearn', 'time', 'sys', 'itertools', 'csv', 'copy']
+10654.txt        1.224744871391589     Cluster_26                                     ['numpy', 'os', 'math', 'h5py', 'scipy', 'matplotlib', 'seaborn', '__future__', 'torch', 'torchvision', 'time', 'sys', 'collections', 'PIL', 'copy']
+11961.txt        0.0                   Cluster_27                                     ['numpy', 'os', 'random', 'sklearn', 'cv2', 'scipy', 'matplotlib', 'glob', 'torch', 'sys', 'itertools', 'collections', 'skimage', 'csv', 'functools']
+10340.txt        1.2018504251546633    Cluster_28                                     ['numpy', 'os', 'random', 'cv2', 'matplotlib', '__future__', 'torch', 'torchvision', 'time', 'sys', 'PIL', 'copy', 'shutil']
+11534.txt        1.224744871391589     Cluster_29                                     ['numpy', 'os', 'matplotlib', 'torch', 'torchvision', 'time', 'tqdm', 'IPython']
+11828.txt        0.881917103688197     Cluster_30                                     ['numpy', 'os', 'cv2', 'matplotlib', 'glob', 'torch', 'torchvision', 'PIL', 'tqdm']
+100.txt          0.0                   Cluster_31                                     ['numpy', 'warnings', 'pandas', 'xgboost', 'math', 'random', 'sklearn', 'statsmodels', 'cv2', 'h5py', 'scipy', 'matplotlib', 'keras']
+12953.txt        1.3228756555322954    Cluster_32                                     ['numpy', 'pandas', 'matplotlib', 'seaborn', 'string', 're', 'time', 'itertools', 'datetime', 'requests', 'bs4', 'IPython']
+12204.txt        1.49071198499986      Cluster_33                                     ['os', 'random', 're', 'time', 'sys', 'datetime', 'requests', 'bs4', 'json', 'shutil']
+3131 notebooks
+SpectralClustering(assign_labels='discretize', n_clusters=13, random_state=0)
+Clustering time: 2.096741199493408
+Silhouette Coefficient: 0.113
+Davies-Bouldin Index: 1.392
+labels:
+[1372, 1689, 2, 7, 5, 3, 3, 10, 13, 6, 3, 18]
+Prediction time: 0.007071018218994141
+found 12 clusters
+1002.txt         0.7199026487747554    Cluster_0                                      ['numpy', 'pandas', 'sklearn', 'matplotlib']
+10029.txt        0.7290384911101202    Cluster_1                                      ['numpy']
+10854.txt        0.0                   Cluster_2                                      ['pickle', 'os', 'sklearn', 'h5py', 'scipy', 'matplotlib', 'sys', 'pylab', 'mpl_toolkits']
+10518.txt        1.0690449676496976    Cluster_3                                      ['tensorflow', 'pickle', 'numpy', 'os', 'random', 'sklearn', 'tqdm', 'urllib']
+10120.txt        0.7745966692414834    Cluster_4                                      ['pickle', 'numpy', 'os', 'pandas', 'sklearn', 'nltk', 'glob', 're', 'torch', 'bs4']
+11569.txt        0.6666666666666667    Cluster_5                                      ['pickle', 'numpy', 'sklearn', 'cv2', 'scipy', 'matplotlib', 'glob', 'time', 'utils', 'IPython', 'skimage']
+12141.txt        0.0                   Cluster_6                                      ['tensorflow', 'numpy', 'os', '__future__', 'PIL', 'IPython', 'functools', 'io']
+1105.txt         1.140175425099138     Cluster_7                                      ['tensorflow', 'numpy', 'os', 'math', 'random', 'matplotlib', 're', 'time', 'sys']
+11828.txt        0.9730085108210399    Cluster_8                                      ['numpy', 'os', 'cv2', 'matplotlib', 'glob', 'torch', 'torchvision', 'PIL', 'tqdm']
+12948.txt        1.0137937550497034    Cluster_9                                      ['numpy', 'random', 'sklearn', 'cv2', 'matplotlib', 'keras', 'glob', 'PIL', 'tqdm']
+10840.txt        0.0                   Cluster_10                                     ['numpy', 'random', 'keras', '__future__', 'sys', 'utils', 'io']
+10312.txt        0.773799348732451     Cluster_11                                     ['tensorflow', 'numpy', 'math', 'h5py', 'scipy', 'matplotlib', 'PIL']
+3131 notebooks
+AgglomerativeClustering(metric='euclidean', n_clusters=13)
+Clustering time: 0.4621293544769287
+Silhouette Coefficient: 0.020
+Davies-Bouldin Index: 3.014
+labels:
+[216, 327, 442, 172, 344, 330, 239, 94, 173, 301, 136, 167, 190]
+Prediction time: 0.0016512870788574219
+found 13 clusters
+10184.txt        1.0444612718633932    Cluster_0                                      ['numpy', 'os', 'matplotlib', 'sys']
+10006.txt        0.6149070734469677    Cluster_1                                      ['numpy', 'pandas']
+10025.txt        0.5991760139919908    Cluster_2                                      ['numpy', 'pandas', 'sklearn', 'matplotlib', 'seaborn']
+10696.txt        0.9459965171670337    Cluster_3                                      ['numpy', 'os', 'pandas', 'sklearn', 'matplotlib']
+10015.txt        0.5566234253442524    Cluster_4                                      ['numpy', 'matplotlib']
+10166.txt        0.9503611995183968    Cluster_5                                      ['pandas']
+10029.txt        0.6262048312474795    Cluster_6                                      ['numpy']
+10088.txt        0.7120510864119792    Cluster_7                                      ['numpy', 'matplotlib', 'torch', 'torchvision']
+10626.txt        0.6139969176702902    Cluster_8                                      ['numpy', 'scipy', 'matplotlib']
+1005.txt         0.5807875323045242    Cluster_9                                      ['numpy', 'pandas', 'matplotlib']
+10166.txt        0.4740794211710257    Cluster_10                                     ['pandas']
+10012.txt        0.7104835209338719    Cluster_11                                     ['tensorflow', 'numpy']
+1002.txt         0.514121901536872     Cluster_12                                     ['numpy', 'pandas', 'sklearn', 'matplotlib']
+3131 notebooks
+KMeans(n_clusters=13, n_init='auto', random_state=0)
+Clustering time: 0.034966468811035156
+Silhouette Coefficient: 0.085
+Davies-Bouldin Index: 2.494
+labels:
+[461, 130, 340, 595, 457, 101, 130, 284, 103, 113, 170, 88, 159]
+Prediction time: 0.0071065425872802734
+found 13 clusters
+10029.txt        0.6998074211096872    Cluster_0                                      ['numpy']
+1135.txt         0.6555182240119906    Cluster_1                                      ['sklearn', 'matplotlib']
+10166.txt        0.49034801566906366   Cluster_2                                      ['pandas']
+10025.txt        0.501496947059958     Cluster_3                                      ['numpy', 'pandas', 'sklearn', 'matplotlib', 'seaborn']
+10015.txt        0.42672950548915617   Cluster_4                                      ['numpy', 'matplotlib']
+10235.txt        0.9342674148186493    Cluster_5                                      ['numpy', 'matplotlib', 'time']
+1012.txt         0.5214340716948408    Cluster_6                                      ['os']
+10626.txt        0.6569143030164872    Cluster_7                                      ['numpy', 'scipy', 'matplotlib']
+10469.txt        0.930672542252648     Cluster_8                                      ['tensorflow', 'numpy', 'os']
+10017.txt        0.9258261418606735    Cluster_9                                      ['numpy', 'pandas', 'matplotlib', 'sys']
+1004.txt         0.38266955217154336   Cluster_10                                     ['numpy', 'pandas', 'sklearn']
+12628.txt        1.1552409322605603    Cluster_11                                     ['numpy', 'os', 'cv2', 'matplotlib']
+10653.txt        0.7603562897965993    Cluster_12                                     ['numpy', 'os', 'pandas', 'matplotlib']
+3131 notebooks
+AffinityPropagation(damping=0.999, random_state=0)
+Clustering time: 6.526906251907349
+Silhouette Coefficient: 0.039
+Davies-Bouldin Index: 4.721
+labels:
+[75, 381, 291, 286, 262, 147, 47, 224, 114, 4, 376, 10, 6, 145, 61, 8, 40, 2, 119, 1, 30, 4, 11, 188, 7, 1, 9, 33, 58, 102, 89]
+Prediction time: 0.018034934997558594
+found 31 clusters
+1000.txt         0.4052982440952177    Cluster_0                                      ['numpy', 'pandas', 'matplotlib', 'seaborn']
+10006.txt        0.5059084905155186    Cluster_1                                      ['numpy', 'pandas']
+10015.txt        0.4321980435549809    Cluster_2                                      ['numpy', 'matplotlib']
+1002.txt         0.4113558720613914    Cluster_3                                      ['numpy', 'pandas', 'sklearn', 'matplotlib']
+10025.txt        0.3547360358749888    Cluster_4                                      ['numpy', 'pandas', 'sklearn', 'matplotlib', 'seaborn']
+1005.txt         0.36297473665181224   Cluster_5                                      ['numpy', 'pandas', 'matplotlib']
+10088.txt        0.44933429961580595   Cluster_6                                      ['numpy', 'matplotlib', 'torch', 'torchvision']
+10015.txt        0.3887262526377604    Cluster_7                                      ['numpy', 'matplotlib']
+1000.txt         0.43098661391362264   Cluster_8                                      ['numpy', 'pandas', 'matplotlib', 'seaborn']
+10383.txt        1.25                  Cluster_9                                      ['numpy', 'pandas', 'sklearn', 'matplotlib', 'requests', 'bs4', 'urllib', 'csv']
+10029.txt        0.5072889937034307    Cluster_10                                     ['numpy']
+10693.txt        1.2489995996796797    Cluster_11                                     ['numpy', 'os', 'math', 'h5py', 'matplotlib', 'torch', 'torchvision', 'time', 'sys']
+10937.txt        1.201850425154663     Cluster_12                                     ['numpy', 'os', 'pandas', 'sklearn', 'matplotlib', 'torch', 'torchvision', 'time', 'skimage', 'copy']
+11071.txt        0.7919631983186354    Cluster_13                                     ['requests']
+11373.txt        0.5901639344262295    Cluster_14                                     ['numpy', 'os', 'pandas', 'scipy', 'matplotlib']
+11555.txt        1.2562344526401112    Cluster_15                                     ['numpy', 'os', 'pandas', 'sklearn', 'cv2', 'h5py', 'matplotlib', 'glob']
+11590.txt        0.9855201672213512    Cluster_16                                     ['numpy', 'pandas', 'sklearn', 'matplotlib', 'nltk']
+1162.txt         1.5                   Cluster_17                                     ['tensorflow', 'numpy', 'os', 'pandas', 'math', 'random', 'sklearn', 'cv2', 'matplotlib', 'keras', 'glob', 'time', 'sys', 'tqdm', 'json', 'pathlib', 'io']
+1005.txt         0.3102422679323485    Cluster_18                                     ['numpy', 'pandas', 'matplotlib']
+11961.txt        0.0                   Cluster_19                                     ['numpy', 'os', 'random', 'sklearn', 'cv2', 'scipy', 'matplotlib', 'glob', 'torch', 'sys', 'itertools', 'collections', 'skimage', 'csv', 'functools']
+12011.txt        0.7972173828734265    Cluster_20                                     ['numpy', 'pandas', 'sklearn', 'scipy', 'matplotlib', 'seaborn', 'sys', 'IPython']
+10658.txt        1.1726039399558574    Cluster_21                                     ['numpy', 'matplotlib', '__future__', 'torch', 'torchvision', 'PIL', 'copy']
+12213.txt        0.8479435502808012    Cluster_22                                     ['numpy', 'pandas', 'sklearn', 'matplotlib', 'glob']
+10703.txt        0.7615676512696616    Cluster_23                                     ['numpy', 'os', 'matplotlib']
+12641.txt        1.142857142857143     Cluster_24                                     ['numpy', 'pandas', 'sklearn', 'matplotlib', 'seaborn', 're', 'datetime', 'requests', 'bs4', 'json']
+12990.txt        0.0                   Cluster_25                                     ['numpy', 'os', 'warnings', 'pandas', 'math', 'random', 'sklearn', 'cv2', 'scipy', 'matplotlib', 'seaborn', 'torch', 'time', 'sys', 'tqdm', 'IPython', 'skimage', 'json', 'copy', 'pathlib']
+11828.txt        0.8089010988089467    Cluster_26                                     ['numpy', 'os', 'cv2', 'matplotlib', 'glob', 'torch', 'torchvision', 'PIL', 'tqdm']
+10870.txt        0.5757575757575757    Cluster_27                                     ['numpy', 'pandas', 'sklearn', 'matplotlib', 'requests', 'json']
+10762.txt        0.7689345903785437    Cluster_28                                     ['numpy', 'pandas', 'sklearn', 'scipy', 'matplotlib', 'seaborn', 'time']
+10696.txt        0.5915754839821802    Cluster_29                                     ['numpy', 'os', 'pandas', 'sklearn', 'matplotlib']
+10313.txt        0.9155062798892213    Cluster_30                                     ['random']

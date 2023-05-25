@@ -4,15 +4,20 @@ import os
 from code_completion_lib.code_completion import CodeCompletion
 from code_completion_lib.imports.imports import Imports
 
-from code_completion_lib.necessary_functions import get_code, write_as_csv, read_json,find_imported_methods
+from code_completion_lib.necessary_functions import get_code, write_as_csv, read_json, find_imported_methods
 from code_completion_lib.logger.logger import Logger
+import time
 
 
 class Methods:
     libs: list = []
 
-    def __init__(self):
-        self.logger = Logger(__name__)
+    def __init__(self, path: str, size: str, logger):
+        self.logger = logger
+        self.logger.set_name(__name__)
+
+        self.size = size
+        self.path = path
 
         self.libs.append([r"code_completion_lib\methods\libraries\numpy.json", 'numpy'])
         self.libs.append([r"code_completion_lib\methods\libraries\sklearn.json", 'sklearn'])
@@ -49,27 +54,36 @@ class Methods:
 
         return arr
 
-    def find_methods(self, data_path: str):
+    def find_methods(self, model_path):
+        self.logger.info(f"size = {self.size}")
+        start_time = time.time()
 
         result = []
         methods = []
+        models = os.listdir(model_path)
 
         for lib in self.libs:
             methods = self._find_full_method_name(read_json(lib[0]), prefix=lib[1] + '.')
 
-        write_as_csv([["varible_name", "method", "cluster"]], r'code_completion_lib\methods\methods.csv', 'w')
+        length = len(models)
+        labels = ["varible_name", "method"]
 
-        completion = CodeCompletion()
-        import_class = Imports(data_path)
+        for index in range(length):
+            labels.append(models[index])
+
+        write_as_csv([labels], rf'code_completion_lib\methods\models\{self.size}\data.csv', 'w')
+
+        completion = CodeCompletion(self.size, self.logger)
+        import_class = Imports(self.path, self.size, self.logger)
 
         counter: int = 0
         written: bool = False
 
-        for filename in os.listdir(data_path):
+        for filename in os.listdir(self.path):
             written = False
             counter += 1
 
-            full_path = os.path.join(data_path, filename)
+            full_path = os.path.join(self.path, filename)
 
             code = get_code(full_path)
 
@@ -82,18 +96,23 @@ class Methods:
                 reg_exp = [match.rstrip().replace(" ", "")[:-1].split("=", 1) for match in reg_exp]
 
                 if len(reg_exp) != 0:
+                    expr_full = []
                     for exp in reg_exp:
-                        exp[1] = method[0]
-                        exp.append(completion.cluster_predict(imports_only_lib))
+                        expr = [exp[0], method[0]]
+                        for index in range(length):
+                            expr.append(completion.cluster_predict(imports_only_lib, models[index]))
+                        expr_full.append(expr)
 
-                    result.extend(reg_exp)
+                    result.extend(expr_full)
 
-            if counter % 100 == 0:
-                write_as_csv(result, r'code_completion_lib\methods\methods.csv', 'a')
+            if counter % 5 == 0:
+                write_as_csv(result, rf'code_completion_lib\methods\models\{self.size}\data.csv', 'a')
                 result = []
                 written = True
+                #break
 
         if not written:
-            write_as_csv(result, r'code_completion_lib\methods\methods.csv', 'a')
+            write_as_csv(result, rf'code_completion_lib\methods\models\{self.size}\data.csv', 'a')
 
         self.logger.info("Find methods ended.")
+

@@ -2,55 +2,39 @@ import pandas as pd
 from math import *
 import numpy as np
 import json
-from sklearn.cluster import AgglomerativeClustering
+import time
+from pandas import DataFrame
+
 from sklearn.neighbors import NearestCentroid
-from sklearn.cluster import SpectralClustering
-from sklearn.cluster import DBSCAN
-from sklearn.cluster import MeanShift, estimate_bandwidth
-from sklearn.cluster import AffinityPropagation
+from sklearn.cluster import SpectralClustering, DBSCAN, MeanShift, estimate_bandwidth, AffinityPropagation, KMeans, AgglomerativeClustering
 from sklearn import metrics
 
-from enum import Enum
 import pickle
-
 from operator import itemgetter
-
-from thefuzz import fuzz as f
-
 from code_completion_lib.necessary_functions import read_json, find_imported_methods
 
-from code_completion_lib.logger.logger import Logger
-
-
-class Cluster(Enum):
-    STRUCTURED_DATA = 0                                 # ['numpy', 'matplotlib']
-    SCIENTIFIC_COMPUTING = 1                            # ['pandas']
-    REQUESTS = 2                                        # ['pandas', 'requests', 'bs4']
-    SCIKIT_LEARN = 3                                    # ['numpy', 'pandas', 'scipy', 'matplotlib']
-    SCIKIT_LEARN_VISUALIZATION = 4                      # ['numpy', 'pandas', 'sklearn', 'matplotlib', 'seaborn']
-    TENSOR_FLOW = 5                                     # ['tensorflow', 'numpy', 'matplotlib']
-    STRUCTURED_DATA_VISUALIZATION = 6                   # ['numpy', 'os', 'pandas', 'matplotlib']
-    NUMPY_VISUALIZATION = 7                             # ['numpy', 'pandas', 'sklearn', 'matplotlib']
-    DEEP_NEURAL_NETWORKS = 8                            # ['numpy', 'matplotlib', 'torch', 'torchvision']
-    SCIKIT_LEARN_WITH_NATURAL_LANGUAGE_PROCESSING = 9   # ['numpy', 'pandas', 'sklearn', 'matplotlib', 'nltk', 're']
-    STRUCTURED_DATA_VISUALIZATION_2 = 10                # ['numpy', 'pandas', 'matplotlib']
-    IPython = 11                                        # ['IPython']
-    CS771 = 12                                          # ['numpy', 'random', 'matplotlib', 'time']
+from thefuzz import fuzz
 
 
 class CodeCompletion:
-
     model = None
     df = None
 
-    def __init__(self):
-        self.logger = Logger(__name__)
-        self.df = pd.read_csv(r'code_completion_lib\imports\preprocessing_imports.csv')
+    def __init__(self, size: str, logger):
+        self.logger = logger
+        self.logger.set_name(__name__)
+        self.size = size
+        if size == 'small':
+            self.df = pd.read_csv(r'code_completion_lib\imports\preprocessing_imports_small.csv')
+        if size == 'medium':
+            self.df = pd.read_csv(r'code_completion_lib\imports\preprocessing_imports_medium.csv')
+        if size == 'big':
+            self.df = pd.read_csv(r'code_completion_lib\imports\preprocessing_imports_big.csv')
 
-    def get_variable_completion(self, variable_name: str, imports: list, number: int = 5):
-        cluster_variable = read_json(r'code_completion_lib\methods\relations_cluster_with_variable.json')
+    def get_variable_completion(self,model, variable_name: str, imports: list, number: int = 5):
+        cluster_variable = read_json(rf'code_completion_lib/methods/models/{self.size}/prob/r_c_v_{model}.json')
 
-        cluster_name = self.cluster_predict(imports)
+        cluster_name = self.cluster_predict(imports, model=model)
 
         variables: dict = {}
         result: list = []
@@ -67,10 +51,15 @@ class CodeCompletion:
 
         return result[:number]
 
-    def get_function_completion(self, variable_name: str, imports_lib: list, full_imports: list, number: int = 5):
-        variable_method = read_json(r'code_completion_lib\methods\relations_variable_with_method.json')
+    def get_function_completion(self, model, variable_name: str, imports_lib: list = None, full_imports: list = None,
+                                number: int = 5, cluster=None):
+        model = model.replace(".csv", "")
+        variable_method = read_json(rf'code_completion_lib/methods/models/{self.size}/prob/r_v_m_{model}.json')
 
-        cluster_name: str = self.cluster_predict(imports_lib)
+        if cluster is None:
+            cluster_name: str = self.cluster_predict(imports_lib, model)
+        else:
+            cluster_name: str = cluster
 
         # result for plugin: list[suggestion considering the imports | class for this suggestion]
         result: list = []
@@ -78,7 +67,7 @@ class CodeCompletion:
         best_score = 0
         best_match = 'p'
         for variable in variable_method.keys():
-            score = f.WRatio(variable, variable_name)
+            score = fuzz.WRatio(variable, variable_name)
             if score > best_score:
                 best_score = score
                 best_match = variable
@@ -90,12 +79,16 @@ class CodeCompletion:
             methods = variable_method[best_match][cluster_name]
 
         sorted_methods = dict(sorted(methods.items(), key=itemgetter(1)))
+        keysList = list(sorted_methods.keys())
+        keysList.reverse()
+        if imports_lib is None:
+            return keysList[:number]
 
         imports = []
         for element in full_imports:
             imports.append(element.split("|"))
 
-        imported_methods = find_imported_methods(list(sorted_methods), imports)
+        imported_methods = find_imported_methods(sorted_methods, imports)
         for key in imported_methods.keys():
             if key[0] == key[1]:
                 result.append(f"{key[1]}| ")
@@ -106,8 +99,22 @@ class CodeCompletion:
 
         return result[:number]
 
-    def relations_variable_with_method(self):
-        df = pd.read_csv(r'code_completion_lib/methods/methods.csv')
+    def relations_variable_with_method(self, X: DataFrame, y: DataFrame, model: str):
+        model = model.replace(".csv", "")
+        df = X.copy()
+
+        count = 0
+        for name_1 in df.values:
+            for name_2 in df.values:
+                if name_1[0] == name_2[0]:
+                    break
+                else:
+                    score = fuzz.WRatio(name_1[0], name_2[0])
+                    if score >= 90:
+                        count += 1
+                        name_2[0] = name_1[0]
+                    break
+        df.insert(1, 'method', y['method'])
         variable_method: dict = {}
 
         # Adding variables
@@ -135,12 +142,14 @@ class CodeCompletion:
 
                 for name, value in method.items():
                     method[name] /= total
-
-        with open('code_completion_lib/methods/relations_variable_with_method.json', 'w', encoding='utf-8') as f:
+        with open(f'code_completion_lib/methods/models/{self.size}/prob/r_v_m_{model}.json', 'w',
+                  encoding='utf-8') as f:
             json.dump(variable_method, f, ensure_ascii=False, indent=4)
 
-    def relations_cluster_with_variable(self):
-        df = pd.read_csv('code_completion_lib/methods/methods.csv')
+    def relations_cluster_with_variable(self, X: DataFrame, y: DataFrame, model):
+        model = model.replace(".csv", "")
+        df = X.copy()
+        df.insert(1, 'method', y['method'])
         cluster_variable: dict = {}
 
         # Adding clusters
@@ -163,94 +172,122 @@ class CodeCompletion:
             for name, value in variable.items():
                 variable[name] /= total
 
-        with open('code_completion_lib/methods/relations_cluster_with_variable.json', 'w', encoding='utf-8') as f:
+        with open(f'code_completion_lib/methods/models/{self.size}/prob/r_c_v_{model}.json', 'w', encoding='utf-8') as f:
             json.dump(cluster_variable, f, ensure_ascii=False, indent=4)
 
     def import_clusterization(self):
 
-        # List for saving as .txt file
-        result = []
+        with open(r"analysis\imports\import_clusterization_" + self.size + ".txt", "w") as file:
+                file.write("---------------------------------------------------------------------------\n")
 
-        df = self.df.iloc[:, 1:]
-        X = df.values[:, 1:]
 
-        result.append(f"{len(df)} notebooks")
-
-        tmp = df.copy()
-
-        centroids_result = []
-
-        cluster_model = AgglomerativeClustering(n_clusters=13, affinity='euclidean', linkage='ward')
+        #cluster_model = AgglomerativeClustering(n_clusters=13, affinity='euclidean', linkage='ward')
         # cluster_model = DBSCAN(eps=0.1, min_samples=150)
-        # cluster_model = SpectralClustering(n_clusters=20, assign_labels='discretize', random_state=0)
+        #cluster_model = SpectralClustering(n_clusters=13, assign_labels='discretize', random_state=0)
         # cluster_model = MeanShift()
         # cluster_model = AffinityPropagation(random_state=5)
-        y_predict = cluster_model.fit_predict(X)
-        labels = cluster_model.labels_
 
-        # Metrics
-        result.append(
-            "Silhouette Coefficient: %0.3f"
-            % metrics.silhouette_score(X, labels, metric="euclidean")
-        )
-        result.append(
-            "Davies-Bouldin Index: %0.3f"
-            % metrics.davies_bouldin_score(X, labels)
-        )
 
-        tmp.insert(0, 'labels', labels)
-        result.append("labels:")
-        result.append(tmp.groupby(['labels'])['filename'].count().tolist())
+        self.logger.info(f"size = {self.size}")
 
-        clf = NearestCentroid()
-        clf.fit(X, y_predict)
-        centroids = clf.centroids_
+        models = [MeanShift(bandwidth=2.3),
+                  SpectralClustering(n_clusters=13, assign_labels='discretize', random_state=0),
+                  AgglomerativeClustering(n_clusters=13, metric='euclidean', linkage='ward'),
+                  KMeans(n_clusters=13, random_state=0, n_init="auto"),
+                  AffinityPropagation(damping=0.999, random_state=0)]
+        for model in models:
+            start = time.time()
+            self.logger.info(f"model = {model}")
 
-        # Saving model
-        pickle.dump(clf, open(r"code_completion_lib\model", 'wb'))
+            # List for saving as .txt file
+            result = []
+            df = self.df.iloc[:, 1:]
+            X = df.values[:, 1:]
 
-        # Finding the best example for each cluster by the Euqlidean distance to the cluster center
-        for center in centroids:
-            best_distance = 30
-            best_filename = None
-            for notebook in df.values:
-                notebook_list = notebook.tolist()
-                filename = notebook_list.pop(0)
-                distance = np.sqrt(sum(pow(a - b, 2) for a, b in zip(center, notebook_list)))
-                if distance < best_distance:
-                    best_distance = distance
-                    best_filename = filename
+            result.append(f"{len(df)} notebooks")
 
-            centroids_result.append([best_filename, best_distance])
+            tmp = df.copy()
 
-        result.append(f"found {len(centroids_result)} clusters")
+            centroids_result = []
+            cluster_model = model
 
-        # Finding imports for the best example of each cluster
-        all_imports = [column for column in df if column != "filename"]
+            y_predict = cluster_model.fit_predict(X)
+            labels = cluster_model.labels_
 
-        j = 0
-        for notebook in centroids_result:
-            imports = []
-            import_vector = df.loc[df['filename'] == notebook[0]].values[:, 1:]
-            for i in range(len(import_vector[0])):
-                if import_vector[0][i] == 1:
-                    imports.append(all_imports[i])
+            end = time.time() - start
+            result.append(model)
+            result.append(f"Clustering time: {end}")
+
+
+            # Metrics
             result.append(
-                f"{notebook[0]} {(15 - len(notebook[0])) * ' '} {notebook[1]} {(20 - len(f'{notebook[1]}')) * ' '} {Cluster(j).name} {(45 - len(Cluster(j).name)) * ' '} {imports}")
-            j += 1
+                "Silhouette Coefficient: %0.3f"
+                % metrics.silhouette_score(X, labels, metric="euclidean")
+            )
+            result.append(
+                "Davies-Bouldin Index: %0.3f"
+                % metrics.davies_bouldin_score(X, labels)
+            )
 
-        with open(r"analysis\imports\import_clusterization.txt", "w") as file:
-            for line in result:
-                file.write(f"{line}\n")
+            tmp.insert(0, 'labels', labels)
+            result.append("labels:")
+            result.append(tmp.groupby(['labels'])['filename'].count().tolist())
 
-        self.logger.info('Clusterization ended')
+            clf = NearestCentroid()
+            clf.fit(X, y_predict)
+            centroids = clf.centroids_
+
+            # Saving model
+            pickle.dump(clf, open(rf"code_completion_lib\models\{self.size}\{model}", 'wb'))
+
+            start = time.time()
+            self.cluster_predict(["numpy", "sklearn", "matplotlib", "pandas"],model)
+            end = time.time() - start
+            result.append(f"Prediction time: {end}")
+
+            # Finding the best example for each cluster by the Euqlidean distance to the cluster center
+            for center in centroids:
+                best_distance = 30
+                best_filename = None
+                for notebook in df.values:
+                    notebook_list = notebook.tolist()
+                    filename = notebook_list.pop(0)
+                    distance = np.sqrt(sum(pow(a - b, 2) for a, b in zip(center, notebook_list)))
+                    if distance < best_distance:
+                        best_distance = distance
+                        best_filename = filename
+
+                centroids_result.append([best_filename, best_distance])
+
+            result.append(f"found {len(centroids_result)} clusters")
+
+            # Finding imports for the best example of each cluster
+            all_imports = [column for column in df if column != "filename"]
+
+            j = 0
+            for notebook in centroids_result:
+                imports = []
+                import_vector = df.loc[df['filename'] == notebook[0]].values[:, 1:]
+                for i in range(len(import_vector[0])):
+                    if import_vector[0][i] == 1:
+                        imports.append(all_imports[i])
+                result.append(
+                    f"{notebook[0]} {(15 - len(notebook[0])) * ' '} {notebook[1]} {(20 - len(f'{notebook[1]}')) * ' '} Cluster_{j} {(45 - len(f'Cluster_{j}')) * ' '} {imports}")
+                j += 1
+
+            with open(r"analysis\imports\import_clusterization_" + self.size + ".txt", "a") as file:
+                for line in result:
+                    file.write(f"{line}\n")
+
+            self.logger.info('Clusterization ended')
 
     def load_clusterization_model(self, filename):
         self.model = pickle.load(open(filename, 'rb'))
 
-    def cluster_predict(self, imports: list) -> str:
+    def cluster_predict(self, imports: list, model) -> str:
         """Predict cluster for one notebook by imports"""
-        self.load_clusterization_model(r"code_completion_lib\model")
+
+        self.load_clusterization_model(rf"code_completion_lib\models\{self.size}\{model}")
 
         df = self.df.iloc[:, 2:]
         all_imports = [column for column in df if column != "filename"]
@@ -265,4 +302,4 @@ class CodeCompletion:
                 X[0].append(0)
 
         predict = self.model.predict(X)
-        return Cluster(predict[0]).name
+        return f"CLUSTER_{predict[0]}"

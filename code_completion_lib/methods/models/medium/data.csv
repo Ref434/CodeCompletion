@@ -1,0 +1,4 @@
+varible_name,method,"AffinityPropagation(damping=0.999, random_state=0)","AgglomerativeClustering(metric='euclidean', n_clusters=13)","KMeans(n_clusters=13, n_init='auto', random_state=0)",MeanShift(bandwidth=2.3),"SpectralClustering(assign_labels='discretize', n_clusters=13, random_state=0)"
+test_acc,numpy.mean,CLUSTER_146,CLUSTER_2,CLUSTER_7,CLUSTER_0,CLUSTER_0
+self._data,numpy.hstack,CLUSTER_146,CLUSTER_2,CLUSTER_7,CLUSTER_0,CLUSTER_0
+self._data,numpy.vstack,CLUSTER_146,CLUSTER_2,CLUSTER_7,CLUSTER_0,CLUSTER_0

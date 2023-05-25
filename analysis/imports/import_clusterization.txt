@@ -1,19 +1,19 @@
-21 notebooks
-Silhouette Coefficient: 0.108
-Davies-Bouldin Index: 0.737
+29233 notebooks
+Silhouette Coefficient: -0.052
+Davies-Bouldin Index: 3.279
 labels:
-[2, 3, 4, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1]
+[5443, 2941, 1875, 2257, 5448, 1012, 1830, 1364, 946, 3334, 990, 965, 828]
 found 13 clusters
-10.txt           1.118033988749895     STRUCTURED_DATA                                ['tensorflow', 'pickle', 'numpy', 'os']
-51.txt           0.9428090415820635    SCIENTIFIC_COMPUTING                           ['numpy']
-12.txt           0.5                   REQUESTS                                       ['numpy', 'pandas', 'matplotlib', 'sklearn', 'seaborn']
-9.txt            0.0                   SCIKIT_LEARN                                   ['numpy', 'os', 'pandas', 'matplotlib', 're', 'sklearn', 'pystan', 'scipy', 'google']
-49.txt           0.8660254037844386    SCIKIT_LEARN_VISUALIZATION                     ['numpy', 'pandas', 'sklearn', 'itertools']
-4.txt            1.0                   TENSOR_FLOW                                    ['pickle', 'numpy', 'matplotlib', 'sys', 'time']
-3.txt            0.0                   STRUCTURED_DATA_VISUALIZATION                  ['pickle', 'numpy', 'os', 'pandas', 'matplotlib', 'math', 'glob', 'cv2', 'skimage']
-61.txt           0.0                   NUMPY_VISUALIZATION                            ['tensorflow', 'numpy', 'pandas', 'matplotlib', 're', 'sklearn', 'keras', 'IPython', 'gensim', 'nltk', 'tqdm']
-60.txt           0.0                   DEEP_NEURAL_NETWORKS                           ['numpy', 'torch', 'math', 'dlc_bci', 'utility']
-50.txt           0.0                   SCIKIT_LEARN_WITH_NATURAL_LANGUAGE_PROCESSING  ['os', 'pandas', 'matplotlib', 'xarray', 'metpy', 'datetime']
-52.txt           0.0                   STRUCTURED_DATA_VISUALIZATION_2                ['numpy', 'os', 'pandas', 'matplotlib', 'datetime', 'pandas_datareader', 'fix_yahoo_finance', 'cvxpy']
-6.txt            0.0                   IPython                                        ['numpy', 'matplotlib', 'cv2', 'keras']
-2.txt            0.0                   CS771                                          ['numpy', 'sklearn', 'mltools', 'xgboost']
+1005.txt         0.7187138730926786    CLUSTER_1                                      ['numpy', 'pandas', 'matplotlib']
+10015.txt        0.5879462057403302    CLUSTER_2                                      ['numpy', 'matplotlib']
+11213.txt        0.9870860370020661    CLUSTER_3                                      ['numpy', 'os', 'matplotlib', 'keras']
+10025.txt        0.4867009106231917    CLUSTER_4                                      ['numpy', 'pandas', 'sklearn', 'matplotlib', 'seaborn']
+10200.txt        0.7124897412675063    CLUSTER_5                                      ['pandas']
+10065.txt        0.6994651610381996    CLUSTER_6                                      ['tensorflow', 'numpy']
+1002.txt         0.5394790581246836    CLUSTER_7                                      ['numpy', 'pandas', 'sklearn', 'matplotlib']
+10006.txt        0.43475073313782986   CLUSTER_8                                      ['numpy', 'pandas']
+2091.txt         1.0194572444768726    CLUSTER_9                                      ['numpy', 'pandas', 'sklearn', 'matplotlib', 'nltk', 're']
+10653.txt        1.0233223552016208    CLUSTER_10                                     ['numpy', 'os', 'pandas', 'matplotlib']
+10086.txt        0.7446205402788754    CLUSTER_11                                     ['numpy', 'math', 'matplotlib']
+10088.txt        0.780992484203804     CLUSTER_12                                     ['numpy', 'matplotlib', 'torch', 'torchvision']
+11622.txt        0.894938130287324     CLUSTER_13                                     ['numpy', 'pandas', 'matplotlib', 'requests', 'json']

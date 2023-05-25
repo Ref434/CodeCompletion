@@ -1,0 +1,24 @@
+
+import pandas as pd
+import seaborn as sns
+from numpy import sqrt
+import numpy
+from sklearn import metrics
+from sklearn.svm import LinearSVC, SVC
+from sklearn.model_selection import KFold
+from sklearn import linear_model
+from sklearn.linear_model import LogisticRegression
+from sklearn import *
+import sklearn as sk
+from datetime import date
+
+var1 = metrics.ConfusionMatrixDisplay(sdf)
+var2 = LinearSVC()
+var3 = SVC()
+var4 = KFold()
+var5 = linear_model.LogisticRegression()
+var6 = LogisticRegression()
+var7 = model_selection.KFold()
+var8 = sk.model_selection.KFold()
+var9 = sqrt(10)
+var10 = date(10)
