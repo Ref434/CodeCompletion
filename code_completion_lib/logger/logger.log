@@ -1,186 +1,41 @@
-__main__ 2023-05-13 17:38:53,626 INFO -----------------------------------------------------
-__main__ 2023-05-13 17:41:29,098 INFO -----------------------------------------------------
-__main__ 2023-05-13 17:42:18,846 INFO -----------------------------------------------------
-__main__ 2023-05-13 17:52:52,804 INFO -----------------------------------------------------
-__main__ 2023-05-13 17:54:52,883 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:13:25,404 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:14:19,797 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:15:26,925 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:16:40,876 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:18:05,240 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:18:24,528 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:21:26,674 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:22:46,935 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:23:42,927 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:24:48,656 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:27:38,655 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:31:16,884 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:32:07,856 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:32:34,074 INFO -----------------------------------------------------
-__main__ 2023-05-13 18:35:01,993 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:02:42,437 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:03:31,343 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:03:44,864 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:03:57,017 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:04:42,476 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:05:47,995 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:06:02,557 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:29:17,268 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:29:39,534 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:30:02,692 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:30:40,035 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:31:17,397 INFO -----------------------------------------------------
-__main__ 2023-05-13 19:31:44,500 INFO -----------------------------------------------------
-__main__ 2023-05-19 13:48:32,184 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-19 13:48:32,184 INFO size = small
-__main__ 2023-05-19 13:49:21,386 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-19 13:49:21,386 INFO size = small
-code_completion_lib.imports.imports 2023-05-19 13:49:28,181 INFO Find methods ended.
-__main__ 2023-05-19 13:50:20,323 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-19 13:50:20,323 INFO size = small
-__main__ 2023-05-19 13:54:03,844 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-19 13:54:22,227 INFO size = small
-__main__ 2023-05-19 13:58:13,667 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-19 13:58:13,667 INFO size = small
-__main__ 2023-05-19 14:00:02,035 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-19 14:00:02,036 INFO size = small
-__main__ 2023-05-19 14:07:09,006 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-19 14:07:09,006 INFO size = small
-code_completion_lib.imports.imports 2023-05-19 14:07:09,603 ERROR Exception
+__main__ 2023-05-27 15:13:26,236 INFO -----------------------------------------------------
+code_completion_lib.parse_notebooks 2023-05-27 15:21:46,386 ERROR Exception
 Traceback (most recent call last):
-  File "D:\sasha\code_completion\main.py", line 31, in <module>
-    methods.find_methods_test(model_path)
-  File "D:\sasha\code_completion\code_completion_lib\methods\find_methods_in_code.py", line 152, in find_methods_test
-    expr = [exp[0], method[0], " import ".join(imports)]
-TypeError: sequence item 0: expected str instance, list found
-__main__ 2023-05-19 14:07:52,520 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-19 14:07:52,520 INFO size = small
-code_completion_lib.imports.imports 2023-05-19 14:07:53,244 ERROR Exception
+  File "D:\sasha\code_completion\code_completion_lib\parse_notebooks.py", line 103, in parse
+    full_code += "\n" + code
+TypeError: can only concatenate str (not "NoneType") to str
+code_completion_lib.parse_notebooks 2023-05-27 15:24:39,803 INFO 0.0027375509868871307% failed in parse func
+code_completion_lib.parse_notebooks 2023-05-27 15:24:39,803 INFO 10.383530893262886% passed in parse func
+__main__ 2023-05-27 15:32:04,304 INFO -----------------------------------------------------
+code_completion_lib.methods.find_methods_in_code 2023-05-27 15:32:26,802 INFO size = small
+code_completion_lib.imports.imports 2023-05-27 15:33:04,035 INFO Find methods ended.
+code_completion_lib.code_completion 2023-05-27 15:34:19,020 ERROR Exception
 Traceback (most recent call last):
-  File "D:\sasha\code_completion\main.py", line 31, in <module>
-    methods.find_methods_test(model_path)
-  File "D:\sasha\code_completion\code_completion_lib\methods\find_methods_in_code.py", line 152, in find_methods_test
-    expr = [exp[0], method[0], " import ".join(imports)]
-TypeError: sequence item 0: expected str instance, list found
-__main__ 2023-05-19 14:08:56,961 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-19 14:08:56,961 INFO size = small
-code_completion_lib.imports.imports 2023-05-19 14:08:57,590 ERROR Exception
-Traceback (most recent call last):
-  File "D:\sasha\code_completion\main.py", line 31, in <module>
-    methods.find_methods_test(model_path)
-  File "D:\sasha\code_completion\code_completion_lib\methods\find_methods_in_code.py", line 152, in find_methods_test
-    expr = [exp[0], method[0], " ".join(imports)]
-TypeError: sequence item 0: expected str instance, list found
-__main__ 2023-05-19 14:09:43,555 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-19 14:09:43,555 INFO size = small
-code_completion_lib.imports.imports 2023-05-19 14:10:06,509 INFO Find methods ended.
-__main__ 2023-05-19 14:13:26,600 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-19 14:13:26,600 INFO size = small
-code_completion_lib.imports.imports 2023-05-19 14:13:48,709 INFO Find methods ended.
-__main__ 2023-05-19 14:14:32,088 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-19 14:14:32,088 INFO size = small
-code_completion_lib.imports.imports 2023-05-19 15:09:48,463 INFO Find methods ended.
-code_completion_lib.imports.imports 2023-05-19 15:24:29,342 INFO Find methods ended.
-__main__ 2023-05-25 09:07:46,591 INFO -----------------------------------------------------
-__main__ 2023-05-25 09:28:44,695 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-25 09:28:50,534 INFO size = small
-__main__ 2023-05-25 09:31:13,553 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-25 09:31:15,681 INFO size = small
-__main__ 2023-05-25 09:38:47,241 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-25 09:38:55,457 INFO size = small
-code_completion_lib.imports.imports 2023-05-25 09:39:02,276 INFO Find methods ended.
-__main__ 2023-05-25 09:40:27,534 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-25 09:40:27,709 INFO size = small
-code_completion_lib.imports.imports 2023-05-25 09:40:34,743 INFO Find methods ended.
-code_completion_lib.methods.find_methods_in_code 2023-05-25 09:40:34,744 INFO size = medium
-code_completion_lib.imports.imports 2023-05-25 09:40:41,094 INFO Find methods ended.
-code_completion_lib.methods.find_methods_in_code 2023-05-25 09:40:41,095 INFO size = big
-code_completion_lib.methods.find_methods_in_code 2023-05-25 09:40:41,125 ERROR Exception
-Traceback (most recent call last):
-  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_10212\3121622378.py", line 5, in <module>
-    methods.find_methods(model_path)
-  File "D:\sasha\code_completion\code_completion_lib\methods\find_methods_in_code.py", line 68, in find_methods
-    write_as_csv([["varible_name", "method", models[0], models[1], models[2], models[3], models[4]]],
-IndexError: list index out of range
-__main__ 2023-05-25 09:45:56,344 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-25 09:46:00,467 INFO size = small
-code_completion_lib.imports.imports 2023-05-25 09:46:07,064 INFO Find methods ended.
-code_completion_lib.methods.find_methods_in_code 2023-05-25 09:46:07,064 INFO size = medium
-code_completion_lib.imports.imports 2023-05-25 09:46:13,479 INFO Find methods ended.
-code_completion_lib.methods.find_methods_in_code 2023-05-25 09:46:13,480 INFO size = big
-code_completion_lib.imports.imports 2023-05-25 09:46:19,976 INFO Find methods ended.
-code_completion_lib.imports.imports 2023-05-25 09:52:23,545 ERROR Exception
-Traceback (most recent call last):
-  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_7340\1177654345.py", line 7, in <module>
-    X = dataset[["varible_name", "cluster"]]
-  File "C:\Users\mosas\AppData\Roaming\Python\Python39\site-packages\pandas\core\frame.py", line 3511, in __getitem__
-    indexer = self.columns._get_indexer_strict(key, "columns")[1]
-  File "C:\Users\mosas\AppData\Roaming\Python\Python39\site-packages\pandas\core\indexes\base.py", line 5782, in _get_indexer_strict
-    self._raise_if_missing(keyarr, indexer, axis_name)
-  File "C:\Users\mosas\AppData\Roaming\Python\Python39\site-packages\pandas\core\indexes\base.py", line 5845, in _raise_if_missing
-    raise KeyError(f"{not_found} not in index")
-KeyError: "['cluster'] not in index"
-code_completion_lib.imports.imports 2023-05-25 09:53:15,184 ERROR Exception
-Traceback (most recent call last):
-  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_7340\1678195693.py", line 9, in <module>
-    X = dataset[["varible_name", "cluster"]]
-  File "C:\Users\mosas\AppData\Roaming\Python\Python39\site-packages\pandas\core\frame.py", line 3511, in __getitem__
-    indexer = self.columns._get_indexer_strict(key, "columns")[1]
-  File "C:\Users\mosas\AppData\Roaming\Python\Python39\site-packages\pandas\core\indexes\base.py", line 5782, in _get_indexer_strict
-    self._raise_if_missing(keyarr, indexer, axis_name)
-  File "C:\Users\mosas\AppData\Roaming\Python\Python39\site-packages\pandas\core\indexes\base.py", line 5845, in _raise_if_missing
-    raise KeyError(f"{not_found} not in index")
-KeyError: "['cluster'] not in index"
-code_completion_lib.imports.imports 2023-05-25 09:53:31,216 ERROR Exception
-Traceback (most recent call last):
-  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_7340\1132453014.py", line 9, in <module>
-    X = dataset[["varible_name", "cluster"]]
-  File "C:\Users\mosas\AppData\Roaming\Python\Python39\site-packages\pandas\core\frame.py", line 3511, in __getitem__
-    indexer = self.columns._get_indexer_strict(key, "columns")[1]
-  File "C:\Users\mosas\AppData\Roaming\Python\Python39\site-packages\pandas\core\indexes\base.py", line 5782, in _get_indexer_strict
-    self._raise_if_missing(keyarr, indexer, axis_name)
-  File "C:\Users\mosas\AppData\Roaming\Python\Python39\site-packages\pandas\core\indexes\base.py", line 5845, in _raise_if_missing
-    raise KeyError(f"{not_found} not in index")
-KeyError: "['cluster'] not in index"
-code_completion_lib.code_completion 2023-05-25 09:54:52,079 ERROR Exception
-Traceback (most recent call last):
-  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_7340\2826087695.py", line 27, in <module>
+  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_16124\1635884698.py", line 43, in <module>
     acc_top3 = top_3(y_true, y_pred_top3)
 NameError: name 'top_3' is not defined
-code_completion_lib.code_completion 2023-05-25 09:54:52,111 ERROR Exception
+code_completion_lib.code_completion 2023-05-27 15:34:19,059 ERROR Exception
 Traceback (most recent call last):
-  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_7340\2826087695.py", line 27, in <module>
+  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_16124\1635884698.py", line 43, in <module>
     acc_top3 = top_3(y_true, y_pred_top3)
 NameError: name 'top_3' is not defined
-code_completion_lib.code_completion 2023-05-25 09:54:52,137 ERROR Exception
+code_completion_lib.code_completion 2023-05-27 15:34:19,095 ERROR Exception
 Traceback (most recent call last):
-  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_7340\2826087695.py", line 27, in <module>
+  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_16124\1635884698.py", line 43, in <module>
     acc_top3 = top_3(y_true, y_pred_top3)
 NameError: name 'top_3' is not defined
-code_completion_lib.code_completion 2023-05-25 09:54:52,158 ERROR Exception
+code_completion_lib.code_completion 2023-05-27 15:34:19,135 ERROR Exception
 Traceback (most recent call last):
-  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_7340\2826087695.py", line 27, in <module>
+  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_16124\1635884698.py", line 43, in <module>
     acc_top3 = top_3(y_true, y_pred_top3)
 NameError: name 'top_3' is not defined
-code_completion_lib.code_completion 2023-05-25 09:54:52,182 ERROR Exception
+code_completion_lib.code_completion 2023-05-27 15:34:19,177 ERROR Exception
 Traceback (most recent call last):
-  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_7340\2826087695.py", line 27, in <module>
+  File "C:\Users\mosas\AppData\Local\Temp\ipykernel_16124\1635884698.py", line 43, in <module>
     acc_top3 = top_3(y_true, y_pred_top3)
 NameError: name 'top_3' is not defined
-__main__ 2023-05-25 09:55:51,661 INFO -----------------------------------------------------
-__main__ 2023-05-25 09:56:44,431 INFO -----------------------------------------------------
-__main__ 2023-05-25 09:58:23,385 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-25 09:58:23,411 INFO size = small
-__main__ 2023-05-25 09:59:25,907 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-25 09:59:25,947 INFO size = small
-code_completion_lib.imports.imports 2023-05-25 10:00:28,374 INFO Find methods ended.
-__main__ 2023-05-25 10:02:00,412 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-25 10:02:02,460 INFO size = small
-code_completion_lib.imports.imports 2023-05-25 10:10:06,625 INFO Find methods ended.
-__main__ 2023-05-25 11:38:44,915 INFO -----------------------------------------------------
-__main__ 2023-05-25 11:38:51,327 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-25 11:38:55,462 INFO size = small
-code_completion_lib.imports.imports 2023-05-25 12:13:53,897 INFO -----------------------------------------------------
-code_completion_lib.imports.imports 2023-05-25 12:13:53,897 INFO -----------------------------------------------------
-code_completion_lib.methods.find_methods_in_code 2023-05-25 12:13:56,414 INFO size = small
-code_completion_lib.methods.find_methods_in_code 2023-05-25 12:13:56,414 INFO size = small
+code_completion_lib.methods.find_methods_in_code 2023-05-27 15:35:16,785 INFO size = small
+code_completion_lib.imports.imports 2023-05-27 15:35:53,248 INFO Find methods ended.
+__main__ 2023-05-27 16:09:57,080 INFO -----------------------------------------------------
+code_completion_lib.methods.find_methods_in_code 2023-05-27 16:09:57,112 INFO size = small
+__main__ 2023-05-27 20:22:50,586 INFO -----------------------------------------------------

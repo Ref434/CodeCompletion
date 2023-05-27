@@ -103,7 +103,7 @@ class Parser:
                         full_code += "\n" + code
 
                     # Deleting comments from code
-                    full_code = re.sub(r"#.+\n", "", full_code)
+                    full_code = re.sub(r"#.+\n", "\n", full_code)
                     if count/num_files < 0.1:
                         self._save_as_txt_file(os.path.join(os.path.join(self.parse_to, "small"), filename.replace(".ipynb", "")), full_code)
                     if count/num_files < 0.4:

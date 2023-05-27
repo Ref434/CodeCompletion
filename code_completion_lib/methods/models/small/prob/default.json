@@ -1,0 +1,88 @@
+{
+    "fig1,ax1": {
+        "matplotlib.pyplot.subplots(figsize=(18,8)": 1.0
+    },
+    "mlp": {
+        "sklearn.neural_network.MLPRegressor(hidden_layer_sizes=(2,)": 1.0
+    },
+    "y_true,y_pred": {
+        "numpy.array(y_true)": 1.0
+    },
+    "var": {
+        "numpy.cumsum(np.round(pca.explained_variance_ratio_,decimals=3)": 1.0
+    },
+    "pca": {
+        "sklearn.decomposition.PCA(n_components=14)": 0.5,
+        "sklearn.decomposition.PCA(n_components=9)": 0.5
+    },
+    "scale": {
+        "sklearn.preprocessing.StandardScaler()": 1.0
+    },
+    "f_test": {
+        "numpy.var(y_test)": 1.0
+    },
+    "test_acc": {
+        "numpy.mean": 1.0
+    },
+    "principalDf": {
+        "pandas.DataFrame": 1.0
+    },
+    "clf": {
+        "sklearn.svm.SVR()": 1.0
+    },
+    "au_1062bio_feature": {
+        "pandas.concat([au_1062bio_feature,noise1])": 1.0
+    },
+    "tsne": {
+        "sklearn.manifold.TSNE(perplexity=1,n_components=2,init='pca',n_iter=250)": 1.0
+    },
+    "sstot": {
+        "numpy.sum(np.square(y_true-np.mean(y_pred)": 1.0
+    },
+    "training_loss": {
+        "math.sqrt(mean_squared_error(y_train,y_validate)": 1.0
+    },
+    "self._labels": {
+        "numpy.hstack": 1.0
+    },
+    "self._data": {
+        "numpy.vstack": 1.0
+    },
+    "b": {
+        "numpy.unique(a)": 1.0
+    },
+    "au_1062bio": {
+        "pandas.DataFrame": 0.5,
+        "pandas.merge(au_1062bio_feature,au_1062bio_score,on='_id')": 0.5
+    },
+    "df_1": {
+        "pandas.DataFrame(columns=b)": 1.0
+    },
+    "rmse": {
+        "math.sqrt(mean_squared_error(y_test,y_pred)": 1.0
+    },
+    "bet_number": {
+        "random.randint(0,36)": 1.0
+    },
+    "AUC": {
+        "scipy.integrate.simps(Accuracy,Epsilon)": 1.0
+    },
+    "regr": {
+        "sklearn.ensemble.RandomForestRegressor(max_depth=5,random_state=0)": 1.0
+    },
+    "spin": {
+        "random.randint(0,36)": 1.0
+    },
+    "Epsilon": {
+        "numpy.arange(Begin_Range,End_Range,Interval_Size)": 1.0
+    },
+    "ssres": {
+        "numpy.sum(np.square(y_true-y_pred)": 1.0
+    },
+    "X_train,X_test,y_train,y_test": {
+        "sklearn.model_selection.train_test_split(au_1062bio_x,au_1062bio_y,test_size=0.3)": 1.0
+    },
+    "df": {
+        "pandas.read_csv(your_local_path+\"attachment_Grocery.csv\")": 1.0
+    }
+}

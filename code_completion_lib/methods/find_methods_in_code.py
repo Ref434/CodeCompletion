@@ -71,7 +71,7 @@ class Methods:
         for index in range(length):
             labels.append(models[index])
 
-        write_as_csv([labels], rf'code_completion_lib\methods\models\{self.size}\data.csv', 'w')
+        write_as_csv([labels], rf'code_completion_lib\methods\models\{self.size}\data_test.csv', 'w')
 
         completion = CodeCompletion(self.size, self.logger)
         import_class = Imports(self.path, self.size, self.logger)
@@ -92,13 +92,16 @@ class Methods:
             imported_methods = find_imported_methods(methods, imports)
 
             for method in imported_methods.keys():
-                reg_exp = re.findall(rf".+=\s*{method[1]}\(", code, flags=re.ASCII)
-                reg_exp = [match.rstrip().replace(" ", "")[:-1].split("=", 1) for match in reg_exp]
+                reg_exp = re.findall(rf".+=\s*{method[1]}\([^\)]*\)", code, flags=re.ASCII)
+
+                reg_exp = [match.rstrip().replace(" ", "").split("=", 1) for match in reg_exp]
+
 
                 if len(reg_exp) != 0:
                     expr_full = []
                     for exp in reg_exp:
-                        expr = [exp[0], method[0]]
+
+                        expr = [exp[0], exp[1].replace(method[1], method[0])]
                         for index in range(length):
                             expr.append(completion.cluster_predict(imports_only_lib, models[index]))
                         expr_full.append(expr)
@@ -106,13 +109,13 @@ class Methods:
                     result.extend(expr_full)
 
             if counter % 5 == 0:
-                write_as_csv(result, rf'code_completion_lib\methods\models\{self.size}\data.csv', 'a')
+                write_as_csv(result, rf'code_completion_lib\methods\models\{self.size}\data_test.csv', 'a')
                 result = []
                 written = True
                 #break
 
         if not written:
-            write_as_csv(result, rf'code_completion_lib\methods\models\{self.size}\data.csv', 'a')
+            write_as_csv(result, rf'code_completion_lib\methods\models\{self.size}\data_test.csv', 'a')
 
         self.logger.info("Find methods ended.")
 

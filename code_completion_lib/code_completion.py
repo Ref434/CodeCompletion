@@ -6,7 +6,8 @@ import time
 from pandas import DataFrame
 
 from sklearn.neighbors import NearestCentroid
-from sklearn.cluster import SpectralClustering, DBSCAN, MeanShift, estimate_bandwidth, AffinityPropagation, KMeans, AgglomerativeClustering
+from sklearn.cluster import SpectralClustering, DBSCAN, MeanShift, estimate_bandwidth, AffinityPropagation, KMeans, \
+    AgglomerativeClustering
 from sklearn import metrics
 
 import pickle
@@ -31,7 +32,7 @@ class CodeCompletion:
         if size == 'big':
             self.df = pd.read_csv(r'code_completion_lib\imports\preprocessing_imports_big.csv')
 
-    def get_variable_completion(self,model, variable_name: str, imports: list, number: int = 5):
+    def get_variable_completion(self, model, variable_name: str, imports: list, number: int = 5):
         cluster_variable = read_json(rf'code_completion_lib/methods/models/{self.size}/prob/r_c_v_{model}.json')
 
         cluster_name = self.cluster_predict(imports, model=model)
@@ -50,6 +51,29 @@ class CodeCompletion:
         result.reverse()
 
         return result[:number]
+
+    def get_default_function_completion(self, variable_name: str, number: int = 5):
+        variable_method = read_json(rf'code_completion_lib/methods/models/{self.size}/prob/default.json')
+
+        # result for plugin: list[suggestion considering the imports | class for this suggestion]
+        result: list = []
+
+        best_score = 0
+        best_match = 'p'
+        for variable in variable_method.keys():
+            score = fuzz.WRatio(variable, variable_name)
+            if score > best_score:
+                best_score = score
+                best_match = variable
+
+        methods = variable_method[best_match]
+
+        sorted_methods = dict(sorted(methods.items(), key=itemgetter(1)))
+        keysList = list(sorted_methods.keys())
+        keysList.reverse()
+
+        return keysList[:number]
+
 
     def get_function_completion(self, model, variable_name: str, imports_lib: list = None, full_imports: list = None,
                                 number: int = 5, cluster=None):
@@ -103,17 +127,6 @@ class CodeCompletion:
         model = model.replace(".csv", "")
         df = X.copy()
 
-        count = 0
-        for name_1 in df.values:
-            for name_2 in df.values:
-                if name_1[0] == name_2[0]:
-                    break
-                else:
-                    score = fuzz.WRatio(name_1[0], name_2[0])
-                    if score >= 90:
-                        count += 1
-                        name_2[0] = name_1[0]
-                    break
         df.insert(1, 'method', y['method'])
         variable_method: dict = {}
 
@@ -146,6 +159,36 @@ class CodeCompletion:
                   encoding='utf-8') as f:
             json.dump(variable_method, f, ensure_ascii=False, indent=4)
 
+    def default_task(self, X: DataFrame, y: DataFrame):
+        df = X[["varible_name"]].copy()
+
+        df.insert(1, 'method', y['method'])
+        variable_method: dict = {}
+
+        # Adding variables
+        for line in df.values:
+            variable_method[line[0]] = {}
+
+        # Adding methods with their frequency
+        for line in df.values:
+            if line[1] in variable_method[line[0]].keys():
+                variable_method[line[0]][line[1]] += 1
+            else:
+                variable_method[line[0]][line[1]] = 1
+
+        # Calculating the probability
+        for method in variable_method.values():
+
+            total = 0
+            for name, value in method.items():
+                total += value
+
+            for name, value in method.items():
+                method[name] /= total
+        with open(f'code_completion_lib/methods/models/{self.size}/prob/default.json', 'w',
+                  encoding='utf-8') as f:
+            json.dump(variable_method, f, ensure_ascii=False, indent=4)
+
     def relations_cluster_with_variable(self, X: DataFrame, y: DataFrame, model):
         model = model.replace(".csv", "")
         df = X.copy()
@@ -172,21 +215,20 @@ class CodeCompletion:
             for name, value in variable.items():
                 variable[name] /= total
 
-        with open(f'code_completion_lib/methods/models/{self.size}/prob/r_c_v_{model}.json', 'w', encoding='utf-8') as f:
+        with open(f'code_completion_lib/methods/models/{self.size}/prob/r_c_v_{model}.json', 'w',
+                  encoding='utf-8') as f:
             json.dump(cluster_variable, f, ensure_ascii=False, indent=4)
 
     def import_clusterization(self):
 
         with open(r"analysis\imports\import_clusterization_" + self.size + ".txt", "w") as file:
-                file.write("---------------------------------------------------------------------------\n")
+            file.write("---------------------------------------------------------------------------\n")
 
-
-        #cluster_model = AgglomerativeClustering(n_clusters=13, affinity='euclidean', linkage='ward')
+        # cluster_model = AgglomerativeClustering(n_clusters=13, affinity='euclidean', linkage='ward')
         # cluster_model = DBSCAN(eps=0.1, min_samples=150)
-        #cluster_model = SpectralClustering(n_clusters=13, assign_labels='discretize', random_state=0)
+        # cluster_model = SpectralClustering(n_clusters=13, assign_labels='discretize', random_state=0)
         # cluster_model = MeanShift()
         # cluster_model = AffinityPropagation(random_state=5)
-
 
         self.logger.info(f"size = {self.size}")
 
@@ -218,7 +260,6 @@ class CodeCompletion:
             result.append(model)
             result.append(f"Clustering time: {end}")
 
-
             # Metrics
             result.append(
                 "Silhouette Coefficient: %0.3f"
@@ -241,7 +282,7 @@ class CodeCompletion:
             pickle.dump(clf, open(rf"code_completion_lib\models\{self.size}\{model}", 'wb'))
 
             start = time.time()
-            self.cluster_predict(["numpy", "sklearn", "matplotlib", "pandas"],model)
+            self.cluster_predict(["numpy", "sklearn", "matplotlib", "pandas"], model)
             end = time.time() - start
             result.append(f"Prediction time: {end}")
 
